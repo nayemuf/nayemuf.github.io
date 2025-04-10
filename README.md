@@ -48,7 +48,7 @@ I'm a passionate **Software Developer** with **1.5+ years** of experience in bui
 
 - 🐙 GitHub: [github.com/nayem-uddin-nu](https://github.com/nayem-uddin-nu)
 - 💼 LinkedIn: [linkedin.com/in/nayem-uddin-nu](https://www.linkedin.com/in/nayem-uddin-nu)
-- 🐦 X (Twitter): [x.com/nayem-uddin-nu](https://x.com/nayem_uddin_nu)
+- 🐦 X (Twitter): [x.com/nayem_uddin_nu](https://x.com/nayem_uddin_nu)
 - ✉️ Email: [nayem110899@gmail.com](mailto:nayem110899@gmail.com)
 
 ---
