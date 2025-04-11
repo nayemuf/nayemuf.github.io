@@ -38,16 +38,16 @@ I'm a passionate **Software Developer** with **1.5+ years** of experience in bui
 
 ## 📈 GitHub Stats
 
-![Nayem's GitHub stats](https://github-readme-stats.vercel.app/api?username=nayem-uddin-nu&show_icons=true&theme=radical)
+![Nayem's GitHub stats](https://github-readme-stats.vercel.app/api?username=nayemuf&show_icons=true&theme=radical)
 
-![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=nayem-uddin-nu&layout=compact&theme=radical)
+![Top Languages](https://github-readme-stats.vercel.app/api/top-langs/?username=nayemuf&layout=compact&theme=radical)
 
 ---
 
 ## 📫 Let's Connect
 
-- 🐙 GitHub: [github.com/nayem-uddin-nu](https://github.com/nayem-uddin-nu)
-- 💼 LinkedIn: [linkedin.com/in/nayem-uddin-nu](https://www.linkedin.com/in/nayem-uddin-nu)
+- 🐙 GitHub: [github.com/nayem-uddin-nu](https://github.com/nayemuf)
+- 💼 LinkedIn: [linkedin.com/in/nayem-uddin-nu](https://www.linkedin.com/in/nayemuf)
 - 🐦 X (Twitter): [x.com/nayem_uddin_nu](https://x.com/nayem_uddin_nu)
 - ✉️ Email: [nayem110899@gmail.com](mailto:nayem110899@gmail.com)
 
