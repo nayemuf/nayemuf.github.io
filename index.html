@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayem Uddin - Software Developer | Tech Enthusiast</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Google Fonts - Inter for a modern look -->
+    <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <style>
+        /* Custom CSS for Inter font */
+        body {
+            font-family: 'Bricolage Grotesque', sans-serif;
+            /* Removed scroll-behavior: smooth; as it's now handled by JavaScript */
+        }
+        /* Custom scrollbar for a cleaner look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #2d3748; /* Darker track */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #6b46c1; /* Accent color for thumb */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #805ad5; /* Lighter accent on hover */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-gray-900 to-zinc-950 text-gray-100 antialiased">
+
+    <!-- Header Section - Navigation Bar -->
+    <header class="bg-gray-900 bg-opacity-80 backdrop-blur-sm shadow-lg sticky w-full z-50 py-4">
+        <nav class="container mx-auto px-4 flex justify-between items-center">
+            <!-- Logo/Name -->
+            <a href="#home" class="text-4xl font-bold text-purple-500 hover:text-purple-400 transition-colors duration-300 rounded-lg p-2">
+                nayemuf
+            </a>
+
+            <!-- Desktop Navigation Links -->
+            <div class="hidden md:flex space-x-8">
+                <a href="#home" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-800">Home</a>
+                <a href="#about" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-800">About</a>
+                <a href="#projects" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-800">Projects</a>
+                <a href="#services" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-800">Services</a>
+                <a href="#contact" class="nav-link text-gray-300 hover:text-purple-400 transition-colors duration-300 font-medium py-2 px-3 rounded-lg hover:bg-gray-800">Contact</a>
+            </div>
+
+            <!-- Mobile Menu Button (Hamburger) -->
+            <div class="md:hidden">
+                <button id="mobile-menu-button" class="text-gray-300 hover:text-purple-400 focus:outline-none focus:ring-2 focus:ring-purple-500 p-2 rounded-md">
+                    <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                    </svg>
+                </button>
+            </div>
+        </nav>
+
+        <!-- Mobile Menu (Hidden by default) -->
+        <div id="mobile-menu" class="hidden bg-transparent bg-opacity-90 py-2">
+            <a href="#home" class="nav-link block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-purple-400 transition-colors duration-200 rounded-md mx-2">Home</a>
+            <a href="#about" class="nav-link block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-purple-400 transition-colors duration-200 rounded-md mx-2">About</a>
+            <a href="#projects" class="nav-link block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-purple-400 transition-colors duration-200 rounded-md mx-2">Projects</a>
+            <a href="#services" class="nav-link block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-purple-400 transition-colors duration-200 rounded-md mx-2">Services</a>
+            <a href="#contact" class="nav-link block py-2 px-4 text-gray-300 hover:bg-gray-700 hover:text-purple-400 transition-colors duration-200 rounded-md mx-2">Contact</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section id="home" class="relative h-screen flex items-center justify-center text-center overflow-hidden pt-16">
+            <!-- Background gradient overlay for visual depth -->
+            <div class="absolute inset-0 bg-gradient-to-br from-purple-900/20 to-blue-900/20 z-0"></div>
+            <!-- Animated background shapes (simple CSS for visual interest) -->
+            <div class="absolute inset-0 z-0">
+                <div class="absolute w-48 h-48 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob top-1/4 left-1/4"></div>
+                <div class="absolute w-48 h-48 bg-blue-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-2000 top-1/2 right-1/4"></div>
+                <div class="absolute w-48 h-48 bg-pink-500 rounded-full mix-blend-multiply filter blur-xl opacity-20 animate-blob animation-delay-4000 bottom-1/4 left-1/2"></div>
+            </div>
+
+            <div class="relative z-10 p-6 max-w-4xl mx-auto bg-gray-800/50 rounded-2xl shadow-xl border border-gray-700/50"
+                 data-aos="fade-up" data-aos-duration="1000">
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight text-white mb-4 drop-shadow-lg">
+                    Hi, I'm <span class="text-purple-400">Nayem Uddin</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+                    A passionate Software Developer & Tech Enthusiast crafting robust, scalable, and efficient server-side solutions.
+                    Let's build something amazing together.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-6"
+                     data-aos="fade-up" data-aos-delay="300" data-aos-duration="1000">
+                    <a href="#projects" class="nav-link inline-block bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out border border-purple-700">
+                        View My Projects
+                    </a>
+                    <a href="#contact" class="nav-link inline-block bg-transparent border-2 border-purple-500 hover:border-purple-600 text-purple-400 hover:text-white font-bold py-3 px-8 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out hover:bg-purple-600">
+                        Get in Touch
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900"
+                 data-aos="fade-up" data-aos-duration="1000">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-12 relative pb-4">
+                    About Me
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-purple-500 rounded-full"></span>
+                </h2>
+
+                <div class="flex flex-col lg:flex-row items-center lg:space-x-12">
+                    <!-- Profile Image / Placeholder -->
+                    <div class="flex-shrink-0 mb-8 lg:mb-0 lg:w-1/3"
+                         data-aos="fade-right" data-aos-duration="1000">
+                        <img src="https://placehold.co/400x400/6b46c1/ffffff?text=Nayem+Uddin" alt="Nayem Uddin Profile Photo" class="w-64 h-64 sm:w-80 sm:h-80 mx-auto rounded-full object-cover shadow-2xl border-4 border-purple-500 transition-transform duration-300 hover:scale-105">
+                    </div>
+
+                    <!-- About Text -->
+                    <div class="lg:w-2/3 text-lg text-gray-300 leading-relaxed"
+                         data-aos="fade-left" data-aos-duration="1000" data-aos-delay="200">
+                        <p class="mb-6">
+                            Hello! I'm <span class="text-purple-400 font-semibold">Nayem Uddin</span>, a dedicated Software Developer and Tech Enthusiast based in Dhaka, Bangladesh.
+                            I have professional experience as a Software Developer at Gigabit Ltd (January 2024-Ongoing) where I collaborate with backend and frontend teams,
+                            meet clients, and participate in the full development lifecycle from planning to deployment. I also worked as a Laravel Developer at Wetopia Global (October 2023 - December 2023), focusing on full-stack web development with Laravel and Vue.js and Three-Tier Architecture.
+                        </p>
+                        <p class="mb-6">
+                            My journey in software development began with a fascination for how systems work behind the scenes, leading me to
+                            specialize in creating efficient and scalable solutions. I thrive on solving complex problems and am passionate about writing clean, maintainable code.
+                            My expertise lies in building high-performance APIs, managing databases, and integrating various
+                            services to create seamless digital experiences. I am always eager to learn new technologies
+                            and improve my craft.
+                        </p>
+                        <p>
+                            I hold a B.Sc. in Computer Science & Engineering from City University, Dhaka (March 2019-December 2023).
+                            I actively participate in competitive programming, having solved over 500 problems on various online judges like HackerRank and LeetCode, and participated in over 90 individual programming contests.
+                        </p>
+
+                        <!-- Skills Section -->
+                        <h3 class="text-2xl font-bold text-white mt-10 mb-6 text-center lg:text-left">My Core Skills</h3>
+                        <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4">
+                            <!-- Programming Languages -->
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="50">Java</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="100">PHP</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="150">JavaScript</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="200">SQL</div>
+
+                            <!-- Frameworks -->
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="250">Laravel</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="300">Vue.js</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="350">Spring Boot</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="400">Angular</div>
+
+                            <!-- Databases -->
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="450">MySQL</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="500">MSSQL</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="550">SQLite</div>
+
+                            <!-- DevOps & Cloud -->
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="600">GitHub Actions (CI/CD)</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="650">nginx</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="700">Jenkins</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="750">Amazon S3</div>
+
+                            <!-- Concepts & Tools -->
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="800">Data Structure & Algorithms</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="850">Object-Oriented Programming</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="900">Database Management Systems</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="950">REST APIs</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1000">Git</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1050">GitHub</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1100">GitLab</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1150">Visual Studio Code</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1200">Sublime Text</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1250">IntelliJ IDEA</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1300">Termius</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1350">Debugging</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1400">Windows</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1450">macOS</div>
+                            <div class="bg-gray-800 text-purple-300 py-2 px-4 rounded-full text-center text-sm font-medium shadow-md hover:bg-purple-900 transition-colors duration-200" data-aos="zoom-in" data-aos-delay="1500">Linux (Bash, Nginx, Apache2)</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-900">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-12 relative pb-4"
+                    data-aos="fade-up" data-aos-duration="1000">
+                    My Projects
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-purple-500 rounded-full"></span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1: Ticketi -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="100">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=Ticketi+System" alt="Ticketi Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">Ticketi - Ticket Management System</h3>
+                            <p class="text-gray-400 mb-4">
+                                A ticket management system designed to streamline customer support and issue tracking.
+                                Built with Angular for a dynamic frontend and Laravel for the API backend, optimized for scalability.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Angular</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel (API)</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">GitHub</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <!-- SVG for external link icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="https://github.com/nayemuf/Ticketi" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <!-- SVG for GitHub icon -->
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 2: ezy-dash -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=ezy-dash+Dashboard" alt="ezy-dash Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">ezy-dash - Dynamic Dashboard</h3>
+                            <p class="text-gray-400 mb-4">
+                                A dynamic dashboard application for visualizing and managing data in real time.
+                                Built with Laravel for backend operations and Vue.js for an interactive frontend.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="https://github.com/nayemuf/ezy-dash" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 3: BLOGGY -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="300">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=BLOGGY+Platform" alt="BLOGGY Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">BLOGGY - Blogging Platform</h3>
+                            <p class="text-gray-400 mb-4">
+                                A fully PHP- and MySQL-powered blogging platform for content creators, enabling users to create, edit, and publish blog posts with a user-friendly interface.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">HTML/CSS</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="https://github.com/nayemuf/BLOGGY" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 4: DocShare -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="400">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=DocShare" alt="DocShare Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">DocShare - Document Sharing Platform</h3>
+                            <p class="text-gray-400 mb-4">
+                                A web-based document-sharing platform where users can upload, share, and manage files securely.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Blade</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="https://github.com/nayemuf/DocShare" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 5: Product Management System (Java - Spring Boot) -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="500">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=Product+Management+API" alt="Product Management System Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">Product Management System (Java)</h3>
+                            <p class="text-gray-400 mb-4">
+                                Created a RESTful CRUD API for product management using Spring Boot, implementing standard operations and using Spring Data JPA with MySQL.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Java</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Spring Boot</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">RESTful API</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 6: Human Resource Management - Gigabit Ltd. -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="600">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=HRM+System" alt="Human Resource Management Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">Human Resource Management</h3>
+                            <p class="text-gray-400 mb-4">
+                                An engineering and management system for payroll, attendance, and leave management modules, developed as part of Gigabits' in-house application suite.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MSSQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 7: e-Health Care System - Gigabit Ltd. -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="700">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=e-Health+Care" alt="e-Health Care System Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">e-Health Care System</h3>
+                            <p class="text-gray-400 mb-4">
+                                An engineering and management system for appointment & schedule management, prescription automation, and payment management modules.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MSSQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 8: Schedule Automation Script - Gigabit Ltd. -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="800">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=Schedule+Automation" alt="Schedule Automation Script Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">Schedule Automation Script</h3>
+                            <p class="text-gray-400 mb-4">
+                                An engineering and management system for appointment management, schedule automation, and payment management modules.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MSSQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 9: e-Doc System - Gigabit Ltd. -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="900">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=e-Doc+System" alt="e-Doc System Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">e-Doc System</h3>
+                            <p class="text-gray-400 mb-4">
+                                A collaboration system for sharing documents securely.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MSSQL</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Amazon S3</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 10: Support System - Gigabit Ltd. -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1000">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=Support+System" alt="Support System Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">Support System</h3>
+                            <p class="text-gray-400 mb-4">
+                                A prominent part of a collaboration system for sharing documents and providing support.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MSSQL</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Amazon S3</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 11: e-Learning Platform - Remote -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1100">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=e-Learning+Platform" alt="e-Learning Platform Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">e-Learning Platform</h3>
+                            <p class="text-gray-400 mb-4">
+                                A learning management system built based on group learning principles.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">PHP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaScript</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Ajax</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MSSQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 12: Shopping Cart System (Java - JSP & Servlets) -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1200">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=Shopping+Cart" alt="Shopping Cart System Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">Shopping Cart System (Java)</h3>
+                            <p class="text-gray-400 mb-4">
+                                A dynamic web-based shopping cart application using Java Servlets and JSP, with MVC architecture and session management.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Java</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">JSP</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Servlets</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">MySQL</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 13: Finance Management System (JavaFX) -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1300">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=Finance+Manager" alt="Finance Management System Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">Finance Management System (JavaFX)</h3>
+                            <p class="text-gray-400 mb-4">
+                                A JavaFX desktop application for managing university credit add/drop and student fees, with interactive UI and OOP principles.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">JavaFX</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Java</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">OOP</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Project Card 14: IELTS Preparation App -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl overflow-hidden transform hover:scale-105 transition-all duration-300 border border-gray-700"
+                         data-aos="fade-up" data-aos-duration="1000" data-aos-delay="1400">
+                        <img src="https://placehold.co/600x400/374151/ffffff?text=IELTS+App" alt="IELTS Preparation App Project" class="w-full h-48 object-cover">
+                        <div class="p-6">
+                            <h3 class="text-2xl font-semibold text-white mb-3">IELTS Preparation App</h3>
+                            <p class="text-gray-400 mb-4">
+                                An IELTS preparation application built with Laravel, Vue, and integrated with OpenAI for enhanced functionality.
+                            </p>
+                            <div class="flex flex-wrap gap-2 mb-4">
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Laravel</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">Vue.js</span>
+                                <span class="bg-purple-800 text-purple-200 text-xs font-medium px-2.5 py-0.5 rounded-full">OpenAI</span>
+                            </div>
+                            <div class="flex space-x-4">
+                                <a href="#" target="_blank" class="text-purple-400 hover:text-purple-300 font-medium flex items-center space-x-1">
+                                    <span>Live Demo</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-external-link"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M7 7H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-3"/></svg>
+                                </a>
+                                <a href="#" target="_blank" class="text-gray-400 hover:text-gray-300 font-medium flex items-center space-x-1">
+                                    <span>GitHub</span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="text-center mt-12">
+                    <p class="text-gray-400 text-lg">
+                        This is just a selection of my projects. For a comprehensive list, please visit my <a href="https://github.com/nayemuf" target="_blank" class="text-purple-400 hover:underline">GitHub profile</a>.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Services Section (kept as is, as it describes general backend services) -->
+        <section id="services" class="py-20 px-4 sm:px-6 lg:px-8 bg-gray-900">
+            <div class="container mx-auto max-w-6xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-12 relative pb-4"
+                    data-aos="fade-up" data-aos-duration="1000">
+                    What I Offer
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-purple-500 rounded-full"></span>
+                </h2>
+
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Service Card 1 -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl p-8 text-center border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                         data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="100">
+                        <div class="text-purple-500 mb-6 mx-auto">
+                            <!-- SVG for API Development -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-plug-zap mx-auto"><path d="M13 2v8"/><path d="M10 7l-7 7"/><path d="m18 7-7 7"/><path d="M12 22v-4"/><path d="M10 20h4"/><path d="M12 14a6 6 0 1 0 0 12 6 6 0 0 0 0-12z"/><path d="m19 5-7 7"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">API Development</h3>
+                        <p class="text-gray-400">
+                            Designing and building robust, scalable, and secure RESTful and GraphQL APIs for various applications.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 2 -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl p-8 text-center border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                         data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="200">
+                        <div class="text-purple-500 mb-6 mx-auto">
+                            <!-- SVG for Database Design -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-database mx-auto"><ellipse cx="12" cy="5" rx="9" ry="3"/><path d="M3 5V19A9 3 0 0 0 21 19V5"/><path d="M3 12A9 3 0 0 0 21 12"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Database Management</h3>
+                        <p class="text-gray-400">
+                            Expertise in SQL (PostgreSQL, MySQL) and NoSQL (MongoDB, Redis) database design, optimization, and management.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 3 -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl p-8 text-center border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                         data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="300">
+                        <div class="text-purple-500 mb-6 mx-auto">
+                            <!-- SVG for Cloud Solutions -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-cloud mx-auto"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h3.79a4.5 4.5 0 1 1 0 9H17.5Z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Cloud Solutions</h3>
+                        <p class="text-gray-400">
+                            Deployment and management of backend services on cloud platforms like AWS, Azure, and Google Cloud.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 4 -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl p-8 text-center border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                         data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="400">
+                        <div class="text-purple-500 mb-6 mx-auto">
+                            <!-- SVG for Microservices -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-component mx-auto"><path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z"/><path d="m12 2l3.5 3.5L12 9 8.5 5.5 12 2Z"/><path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z"/><path d="m12 15.5 3.5 3.5L12 22l-3.5-3.5L12 15.5Z"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Microservices Architecture</h3>
+                        <p class="text-gray-400">
+                            Designing and implementing scalable and resilient microservices architectures for complex applications.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 5 -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl p-8 text-center border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                         data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="500">
+                        <div class="text-purple-500 mb-6 mx-auto">
+                            <!-- SVG for Performance Optimization -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-gauge mx-auto"><path d="m12 14 4-4"/><path d="M3.34 19.16a14 14 0 0 1 17.32 0"/><path d="M9.88 4.88a18 18 0 0 1 4.24 0"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Performance Optimization</h3>
+                        <p class="text-gray-400">
+                            Identifying bottlenecks and optimizing backend systems for maximum speed and efficiency.
+                        </p>
+                    </div>
+
+                    <!-- Service Card 6 -->
+                    <div class="bg-gray-800 rounded-2xl shadow-xl p-8 text-center border border-gray-700 transform hover:scale-105 transition-all duration-300"
+                         data-aos="zoom-in" data-aos-duration="1000" data-aos-delay="600">
+                        <div class="text-purple-500 mb-6 mx-auto">
+                            <!-- SVG for Security -->
+                            <svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-shield-check mx-auto"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="m9 12 2 2 4-4"/></svg>
+                        </div>
+                        <h3 class="text-2xl font-semibold text-white mb-4">Security & Authentication</h3>
+                        <p class="text-gray-400">
+                            Implementing robust security measures and authentication protocols (OAuth, JWT) to protect data.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="py-20 px-4 sm:px-6 lg:px-8 bg-zinc-950"
+                 data-aos="fade-up" data-aos-duration="1000">
+            <div class="container mx-auto max-w-3xl">
+                <h2 class="text-4xl font-bold text-center text-white mb-12 relative pb-4">
+                    Get in Touch
+                    <span class="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-24 h-1 bg-purple-500 rounded-full"></span>
+                </h2>
+
+                <div class="bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 border border-gray-700"
+                     data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
+                    <form id="contact-form" action="https://formspree.io/f/mqabvlvn" method="POST" class="space-y-6">
+                        <!-- Replace 'your_form_id' with your actual Formspree form ID -->
+                        <input type="hidden" name="_replyto" value="nayem110899@gmail.com">
+                        <input type="hidden" name="_subject" value="New Portfolio Inquiry from NayemUddin.dev">
+
+                        <div data-aos="fade-right" data-aos-delay="300">
+                            <label for="name" class="block text-gray-300 text-lg font-medium mb-2">Name</label>
+                            <input type="text" id="name" name="name" required
+                                class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                                placeholder="Your Name">
+                        </div>
+                        <div data-aos="fade-right" data-aos-delay="400">
+                            <label for="email" class="block text-gray-300 text-lg font-medium mb-2">Email</label>
+                            <input type="email" id="email" name="email" required
+                                class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                                placeholder="your.email@example.com">
+                        </div>
+                        <div data-aos="fade-right" data-aos-delay="500">
+                            <label for="message" class="block text-gray-300 text-lg font-medium mb-2">Message</label>
+                            <textarea id="message" name="message" rows="6" required
+                                class="w-full px-5 py-3 bg-gray-700 border border-gray-600 rounded-lg text-gray-100 placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-purple-500 focus:border-transparent transition-all duration-200"
+                                placeholder="Tell me about your project or inquiry..."></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full bg-purple-600 hover:bg-purple-700 text-white font-bold py-4 px-6 rounded-full shadow-lg transform hover:scale-105 transition-all duration-300 ease-in-out">
+                            Send Message
+                        </button>
+                        <div id="form-status" class="mt-4 text-center text-lg font-semibold"></div>
+                    </form>
+
+                    <div class="mt-10 text-center"
+                         data-aos="fade-up" data-aos-delay="700">
+                        <p class="text-gray-400 text-lg mb-4">Or find me on social media:</p>
+                        <div class="flex justify-center space-x-6"
+                             data-aos="zoom-in" data-aos-delay="800">
+                            <!-- Social Media Links (replace # with actual links) -->
+                            <a href="https://www.linkedin.com/in/nayemuf" target="_blank" class="text-gray-300 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
+                                <!-- LinkedIn SVG -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                            </a>
+                            <a href="https://github.com/nayemuf" target="_blank" class="text-gray-300 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
+                                <!-- GitHub SVG -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.44-.78-3.46 0 0-1 0-2 1-1.2-.34-2.4-.34-3.6 0-1-.5-2-1-2-1-.56.8-1 1.5-1 3 0 3.5 3 5.5 6 5.5V22"/></svg>
+                            </a>
+                            <!-- Placeholder for Twitter/X, as no link was provided -->
+                            <a href="#" target="_blank" class="text-gray-300 hover:text-purple-400 transition-colors duration-300 transform hover:scale-110">
+                                <!-- Twitter/X SVG -->
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17-18 11.6 2.2.1 4.4-.6 6-2C3 15.5 5 8.5 5 8.5c3.5 4.5 6.5 5.5 11 4 0 0 1.2-2.8 2.8-4.5L22 4Z"/></svg>
+                            </a>
+                        </div>
+                        <p class="text-gray-400 text-lg mt-4">
+                            You can also reach me at: <a href="tel:+8801743372044" class="text-purple-400 hover:underline">+880 1743 372044</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer class="bg-gray-900 py-8 px-4 sm:px-6 lg:px-8 text-center text-gray-400">
+        <div class="container mx-auto">
+            <p>&copy; 2025 Nayem Uddin. All rights reserved.</p>
+            <p class="mt-2">Designed and Developed with ❤️ using Tailwind CSS.</p>
+        </div>
+    </footer>
+
+    <!-- AOS JavaScript -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Initialize AOS
+            AOS.init({
+                once: true, // whether animation should happen only once - while scrolling down
+                mirror: false, // whether elements should animate out while scrolling past them
+            });
+
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const navLinks = mobileMenu.querySelectorAll('a');
+            const allNavLinks = document.querySelectorAll('.nav-link'); // Select all navigation links
+            const contactForm = document.getElementById('contact-form');
+            const formStatus = document.getElementById('form-status');
+
+            // Toggle mobile menu visibility
+            mobileMenuButton.addEventListener('click', function() {
+                mobileMenu.classList.toggle('hidden'); // Toggle hidden class
+            });
+
+            // Close mobile menu when a link is clicked (for smooth scrolling)
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    mobileMenu.classList.add('hidden'); // Hide menu
+                });
+            });
+
+            // Smooth scrolling for all navigation links
+            allNavLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault(); // Prevent default anchor link behavior
+
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+
+                    if (targetElement) {
+                        // Close mobile menu if open
+                        if (!mobileMenu.classList.contains('hidden')) {
+                            mobileMenu.classList.add('hidden');
+                        }
+
+                        window.scrollTo({
+                            top: targetElement.offsetTop,
+                            behavior: 'smooth' // Enable smooth scroll
+                        });
+                    }
+                });
+            });
+
+            // Handle Formspree submission
+            if (contactForm) {
+                contactForm.addEventListener('submit', async function(e) {
+                    e.preventDefault(); // Prevent default form submission
+
+                    const form = e.target;
+                    const formData = new FormData(form);
+
+                    try {
+                        const response = await fetch(form.action, {
+                            method: form.method,
+                            body: formData,
+                            headers: {
+                                'Accept': 'application/json'
+                            }
+                        });
+
+                        if (response.ok) {
+                            formStatus.textContent = 'Message sent successfully! I will get back to you soon.';
+                            formStatus.classList.remove('text-red-500');
+                            formStatus.classList.add('text-green-500');
+                            form.reset(); // Clear the form
+                        } else {
+                            const data = await response.json();
+                            if (data.errors) {
+                                formStatus.textContent = data.errors.map(error => error.message).join(', ');
+                            } else {
+                                formStatus.textContent = 'Oops! There was a problem sending your message.';
+                            }
+                            formStatus.classList.remove('text-green-500');
+                            formStatus.classList.add('text-red-500');
+                        }
+                    } catch (error) {
+                        formStatus.textContent = 'Network error. Please try again later.';
+                        formStatus.classList.remove('text-green-500');
+                        formStatus.classList.add('text-red-500');
+                        console.error('Form submission error:', error);
+                    }
+                });
+            }
+
+
+            // Simple animation for hero section background blobs
+            const style = document.createElement('style');
+            style.innerHTML = `
+                @keyframes blob {
+                    0% {
+                        transform: translate(0px, 0px) scale(1);
+                    }
+                    33% {
+                        transform: translate(30px, -50px) scale(1.1);
+                    }
+                    66% {
+                        transform: translate(-20px, 20px) scale(0.9);
+                    }
+                    100% {
+                        transform: translate(0px, 0px) scale(1);
+                    }
+                }
+                .animate-blob {
+                    animation: blob 7s infinite cubic-bezier(0.6, 0.01, 0.3, 0.9);
+                }
+                .animation-delay-2000 {
+                    animation-delay: 2s;
+                }
+                .animation-delay-4000 {
+                    animation-delay: 4s;
+                }
+            `;
+            document.head.appendChild(style);
+        });
+    </script>
+</body>
+</html>
