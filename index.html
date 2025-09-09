@@ -1,48 +1,451 @@
 <!DOCTYPE html>
-<html lang="">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" href="/favicon.ico" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nayem Uddin – Full Stack Developer & AI Engineer</title>
-    <meta
-      name="title"
-      content="Nayem Uddin – Full Stack Developer & AI Engineer"
-    />
-    <meta
-      name="description"
-      content="I craft modern web apps and smart AI solutions. From Laravel + Vue projects to intelligent chatbots, explore my full stack & AI development portfolio."
-    />
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nayem Uddin - Full Stack Software Developer</title>
+
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="Portfolio of Nayem Uddin, a full-stack software developer from Dhaka, Bangladesh, specializing in Laravel, React, Node.js, and Python/AI. Explore projects and experience.">
+    <meta name="keywords" content="Nayem Uddin, Software Developer, Full Stack Developer, Laravel, React, Node.js, Vue.js, PHP, Python, AI, Portfolio, Bangladesh">
+    <meta name="author" content="Nayem Uddin">
+    <link rel="canonical" href="YOUR_CANONICAL_URL"> <!-- TODO: Replace with your actual domain -->
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://nayemuf.github.io" />
-    <meta
-      property="og:title"
-      content="Nayem Uddin – Full Stack Developer & AI Engineer"
-    />
-    <meta
-      property="og:description"
-      content="I craft modern web apps and smart AI solutions. From Laravel + Vue projects to intelligent chatbots, explore my full stack & AI development portfolio."
-    />
-    <meta property="og:image" content="/assets/nayem-uddin-821kf1ZN.png" />
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="YOUR_CANONICAL_URL"> <!-- TODO: Replace with your actual domain -->
+    <meta property="og:title" content="Nayem Uddin - Full Stack Software Developer">
+    <meta property="og:description" content="Full-stack software developer specializing in Laravel, React, Node.js, and Python/AI.">
+    <meta property="og:image" content="URL_TO_YOUR_OG_IMAGE"> <!-- TODO: Replace with a direct link to a preview image (e.g., on imgbb.com) -->
 
     <!-- Twitter -->
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:url" content="https://nayemuf.github.io" />
-    <meta
-      name="twitter:title"
-      content="Nayem Uddin – Full Stack Developer & AI Engineer"
-    />
-    <meta
-      name="twitter:description"
-      content="I craft modern web apps and smart AI solutions. From Laravel + Vue projects to intelligent chatbots, explore my full stack & AI development portfolio."
-    />
-    <meta name="twitter:image" content="/assets/nayem-uddin-821kf1ZN.png" />
-    <script type="module" crossorigin src="/assets/index-d09znape.js"></script>
-    <link rel="stylesheet" crossorigin href="/assets/index-BJiEcJhm.css">
-  </head>
-  <body>
-    <div id="app"></div>
-  </body>
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="YOUR_CANONICAL_URL"> <!-- TODO: Replace with your actual domain -->
+    <meta property="twitter:title" content="Nayem Uddin - Full Stack Software Developer">
+    <meta property="twitter:description" content="Full-stack software developer specializing in Laravel, React, Node.js, and Python/AI.">
+    <meta property="twitter:image" content="URL_TO_YOUR_OG_IMAGE"> <!-- TODO: Replace with a direct link to a preview image -->
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    
+    <!-- JS Libraries for Animation -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/ScrollTrigger.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.3/Flip.min.js"></script>
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Nayem Uddin",
+      "jobTitle": "Software Developer",
+      "url": "YOUR_CANONICAL_URL",
+      "sameAs": [
+        "https://github.com/nayemuf",
+        "https://linkedin.com/in/nayemuf"
+      ]
+    }
+    </script>
+
+    <style>
+        :root {
+            --bg-color: #F9FAFB; /* gray-50 */
+            --text-color-main: #1F2937; /* gray-800 */
+            --text-color-subtle: #4B5563; /* gray-600 */
+            --border-color: #E5E7EB; /* gray-200 */
+            --accent-color: #0d9488; /* teal-600 */
+            --accent-color-light: #ccfbf1; /* teal-100 */
+        }
+        
+        html { cursor: none; }
+
+        body {
+            font-family: 'Manrope', sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color-subtle);
+        }
+        
+        #cursor-dot, #cursor-outline {
+            position: fixed; top: 0; left: 0;
+            pointer-events: none;
+            border-radius: 50%;
+            z-index: 1000;
+        }
+        #cursor-dot {
+            width: 8px; height: 8px;
+            background-color: var(--accent-color);
+            transform: translate(-50%, -50%);
+        }
+        #cursor-outline {
+            width: 40px; height: 40px;
+            border: 1px solid var(--border-color);
+            transform: translate(-50%, -50%);
+            transition: transform 0.3s ease, background-color 0.3s ease;
+        }
+        body.hovered #cursor-outline {
+            transform: translate(-50%, -50%) scale(1.5);
+            background-color: rgba(13, 148, 136, 0.1);
+        }
+
+        .grid-background {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            width: 100%; height: 100%;
+            background-image:
+                linear-gradient(to right, var(--border-color) 1px, transparent 1px),
+                linear-gradient(to bottom, var(--border-color) 1px, transparent 1px);
+            background-size: 40px 40px;
+            animation: pan 60s linear infinite;
+            z-index: -1; opacity: 0.5;
+        }
+
+        @keyframes pan {
+            0% { background-position: 0% 0%; }
+            100% { background-position: 100% 100%; }
+        }
+
+        .nav-link.active { color: var(--accent-color); font-weight: 700; }
+        .nav-link.active .nav-indicator { width: 4rem; background-color: var(--accent-color); }
+        
+        .interactive-card {
+            background-color: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(8px);
+            border: 1px solid var(--border-color);
+            transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        .interactive-card:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+            border-color: #D1D5DB;
+        }
+
+        .section-title {
+            font-size: 1.125rem; font-weight: 800;
+            letter-spacing: 0.05em; text-transform: uppercase;
+            color: var(--text-color-main);
+        }
+        .tag {
+            display: inline-block; background-color: var(--accent-color-light);
+            color: var(--accent-color); font-size: 0.75rem;
+            font-weight: 600; padding: 0.25rem 0.75rem; border-radius: 9999px;
+        }
+        .project-tab-btn {
+            padding: 0.5rem 1rem; border-radius: 9999px; font-weight: 600;
+            transition: all 0.2s ease; border: 1px solid var(--border-color);
+            color: var(--text-color-subtle);
+        }
+        .project-tab-btn:hover { background-color: #F3F4F6; color: var(--text-color-main); }
+        .project-tab-btn.active { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
+    </style>
+</head>
+<body class="antialiased">
+    <div id="cursor-dot"></div>
+    <div id="cursor-outline"></div>
+    <div class="grid-background"></div>
+
+    <!-- Mobile Header -->
+    <header id="mobile-header" class="lg:hidden fixed top-0 left-0 right-0 z-40 bg-white/80 backdrop-blur-sm border-b border-gray-200">
+        <div class="max-w-screen-xl mx-auto px-6">
+            <div class="flex items-center justify-between h-16">
+                <a href="#" class="text-lg font-bold text-gray-800">Nayem Uddin</a>
+                <button id="mobile-menu-button" class="p-2 -mr-2">
+                    <i data-lucide="menu" class="w-6 h-6 text-gray-600"></i>
+                </button>
+            </div>
+        </div>
+    </header>
+    <div id="mobile-menu-panel" class="lg:hidden fixed inset-0 z-50 bg-gray-800/50 backdrop-blur-sm hidden">
+        <div id="mobile-menu" class="absolute top-0 right-0 h-full w-2/3 max-w-sm bg-white p-6 transform translate-x-full transition-transform duration-300">
+            <div class="flex justify-end mb-8">
+                 <button id="mobile-menu-close-button" class="p-2 -mr-2">
+                    <i data-lucide="x" class="w-6 h-6 text-gray-600"></i>
+                </button>
+            </div>
+            <nav>
+                <ul class="space-y-6 text-lg font-medium text-right">
+                    <li><a href="#about" class="mobile-link text-gray-700 hover:text-teal-600">About</a></li>
+                    <li><a href="#experience" class="mobile-link text-gray-700 hover:text-teal-600">Experience</a></li>
+                    <li><a href="#projects" class="mobile-link text-gray-700 hover:text-teal-600">Projects</a></li>
+                    <li><a href="#education" class="mobile-link text-gray-700 hover:text-teal-600">Education</a></li>
+                    <li><a href="#achievements" class="mobile-link text-gray-700 hover:text-teal-600">Achievements</a></li>
+                    <li><a href="#contact" class="mobile-link text-gray-700 hover:text-teal-600">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="lg:flex max-w-screen-xl mx-auto">
+        <!-- Left Static Column -->
+        <header class="hidden lg:w-2/5 lg:h-screen lg:flex lg:flex-col lg:justify-between lg:py-24 px-6 lg:px-12 lg:sticky lg:top-0">
+            <div>
+                <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 tracking-tight">Nayem Uddin</h1>
+                <h2 class="mt-3 text-lg font-medium text-gray-600">Software Developer</h2>
+                <p class="mt-4 max-w-xs text-gray-500">I build elegant and efficient digital experiences from concept to completion.</p>
+            
+                <nav id="main-nav" class="hidden lg:block mt-16">
+                    <ul class="space-y-4">
+                        <li><a href="#about" class="nav-link group flex items-center py-2"><span class="nav-indicator mr-4 h-0.5 w-8 bg-gray-300 group-hover:w-16 group-hover:bg-gray-500 transition-all duration-300"></span><span>About</span></a></li>
+                        <li><a href="#experience" class="nav-link group flex items-center py-2"><span class="nav-indicator mr-4 h-0.5 w-8 bg-gray-300 group-hover:w-16 group-hover:bg-gray-500 transition-all duration-300"></span><span>Experience</span></a></li>
+                        <li><a href="#projects" class="nav-link group flex items-center py-2"><span class="nav-indicator mr-4 h-0.5 w-8 bg-gray-300 group-hover:w-16 group-hover:bg-gray-500 transition-all duration-300"></span><span>Projects</span></a></li>
+                        <li><a href="#education" class="nav-link group flex items-center py-2"><span class="nav-indicator mr-4 h-0.5 w-8 bg-gray-300 group-hover:w-16 group-hover:bg-gray-500 transition-all duration-300"></span><span>Education</span></a></li>
+                        <li><a href="#achievements" class="nav-link group flex items-center py-2"><span class="nav-indicator mr-4 h-0.5 w-8 bg-gray-300 group-hover:w-16 group-hover:bg-gray-500 transition-all duration-300"></span><span>Achievements</span></a></li>
+                        <li><a href="#contact" class="nav-link group flex items-center py-2"><span class="nav-indicator mr-4 h-0.5 w-8 bg-gray-300 group-hover:w-16 group-hover:bg-gray-500 transition-all duration-300"></span><span>Contact</span></a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="flex items-center space-x-6 mt-8 lg:mt-0">
+                <a href="https://github.com/nayemuf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-800 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
+                <a href="https://linkedin.com/in/nayemuf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-800 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
+            </div>
+        </header>
+
+        <!-- Right Scrollable Column -->
+        <main class="lg:w-3/5 py-12 lg:py-24 px-6 lg:px-12 pt-24 lg:pt-24">
+            <section id="about" class="mb-24 scroll-mt-24">
+                <p class="text-lg leading-relaxed">
+                    My journey into programming began with a curiosity for how things work, which quickly evolved into a passion for building elegant and efficient solutions. While my roots are in the Laravel ecosystem, I've eagerly expanded my expertise to include technologies like React, Node.js, and Python-based AI frameworks. I enjoy the challenge of diving into an existing codebase, understanding its architecture, and making meaningful contributions.
+                </p>
+            </section>
+
+            <section id="experience" class="mb-24 scroll-mt-24">
+                <h3 class="section-title mb-8">Experience</h3>
+                <div class="space-y-12">
+                    <div class="interactive-card rounded-lg p-6 group">
+                        <h4 class="font-bold text-lg text-gray-800 group-hover:text-teal-600 transition-colors">Software Developer · Gigabit Ltd.</h4>
+                        <p class="text-sm text-gray-500 mt-1">JAN 2024 - PRESENT</p>
+                        <p class="mt-4">Developed and maintained full-stack features for multiple enterprise applications. Engineered key modules for HRM, e-Health, and document collaboration systems. Built a Python-based AI agent using LangChain.</p>
+                        <div class="mt-4 flex flex-wrap gap-2">
+                            <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">CI/CD</span>
+                        </div>
+                    </div>
+                     <div class="interactive-card rounded-lg p-6 group">
+                        <h4 class="font-bold text-lg text-gray-800 group-hover:text-teal-600 transition-colors">Laravel Developer · Wetopia Global</h4>
+                        <p class="text-sm text-gray-500 mt-1">OCT 2023 - DEC 2023</p>
+                        <p class="mt-4">Developed backend services for a three-tier architecture web application and collaborated with the frontend team to integrate Vue.js components with Laravel APIs.</p>
+                         <div class="mt-4 flex flex-wrap gap-2">
+                             <span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">PHP</span><span class="tag">MySQL</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <section id="projects" class="mb-24 scroll-mt-24">
+                <h3 class="section-title mb-8">Projects</h3>
+                 <div id="project-tabs" class="flex flex-wrap justify-start gap-2 sm:gap-4 mb-8">
+                    <button class="project-tab-btn active" data-tab="all">All</button>
+                    <button class="project-tab-btn" data-tab="gigabit">Gigabit</button>
+                    <button class="project-tab-btn" data-tab="ai">AI/ML</button>
+                    <button class="project-tab-btn" data-tab="fullstack">Full Stack</button>
+                    <button class="project-tab-btn" data-tab="ecommerce">E-Commerce</button>
+                    <button class="project-tab-btn" data-tab="devops">DevOps/CI-CD</button>
+                </div>
+                <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Projects populated by JS -->
+                </div>
+            </section>
+            
+            <section id="education" class="mb-24 scroll-mt-24">
+                <h3 class="section-title mb-8">Education</h3>
+                 <div class="interactive-card rounded-lg p-6 group">
+                    <h4 class="font-bold text-lg text-gray-800">B.Sc. in Computer Science & Engineering</h4>
+                    <p class="text-md text-gray-600">City University</p>
+                    <p class="text-sm text-gray-500 mt-1">2019 - 2023</p>
+                </div>
+            </section>
+
+            <section id="achievements" class="mb-24 scroll-mt-24">
+                <h3 class="section-title mb-8">Achievements</h3>
+                <div class="grid grid-cols-1 gap-6">
+                    <div class="interactive-card rounded-lg p-6 group">
+                         <h4 class="font-bold text-lg text-gray-800">ICPC World Finals 2023</h4>
+                         <p class="text-sm text-gray-500">Placed 154th in the Asia Dhaka onsite regional contest.</p>
+                    </div>
+                    <div class="interactive-card rounded-lg p-6 group">
+                         <h4 class="font-bold text-lg text-gray-800">HackerRank Gold - Problem Solving (Java)</h4>
+                    </div>
+                    <div class="interactive-card rounded-lg p-6 group">
+                         <h4 class="font-bold text-lg text-gray-800">Industry Speaker @ City University</h4>
+                         <p class="text-sm text-gray-500">Presented on "Mastering Industry Tech Stacks".</p>
+                    </div>
+                </div>
+            </section>
+
+             <section id="contact" class="mb-24 scroll-mt-24">
+                <h3 class="section-title mb-8">Contact</h3>
+                <p class="text-lg mb-4">I'm currently open to new opportunities. Feel free to say hello!</p>
+                <a href="https://wa.me/8801743372044" target="_blank" rel="noopener noreferrer" class="inline-block bg-teal-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-600 transition-colors">
+                    Say Hello on WhatsApp
+                </a>
+            </section>
+            
+            <footer class="text-center text-sm text-gray-400 mt-24">
+                 <p>Coded in Visual Studio Code, built with Tailwind CSS.</p>
+            </footer>
+        </main>
+    </div>
+
+    <script>
+        lucide.createIcons();
+
+        const projectsData = [
+            { title: 'AI Sales Agent', desc: 'Intelligent agent for parsing documents.', tags: ['Python', 'LangChain'], category: 'ai fullstack gigabit', icon: 'brain-circuit' },
+            { title: 'AI-Powered ATS', desc: 'Analyzes resumes against job descriptions.', tags: ['Python', 'spaCy'], category: 'ai fullstack', icon: 'file-scan' },
+            { title: 'West Row Kitchen', desc: 'AI-powered cloud kitchen platform.', tags: ['PERN', 'PostgreSQL', 'Stripe', 'CI/CD'], category: 'fullstack gigabit devops ai', icon: 'chef-hat', link: 'https://westrowkitchen.com' },
+            { title: 'TiNHiH Portal', desc: 'CRM for a foundation to manage donations.', tags: ['PERN', 'Laravel', 'Vue.js', 'Stripe'], category: 'fullstack gigabit devops', icon: 'heart-handshake', link: 'https://tinhinh.org' },
+            { title: 'Longleap', desc: 'Document collaboration for researchers.', tags: ['Vue.js', 'Laravel', 'S3', 'Stripe'], category: 'fullstack gigabit devops', icon: 'file-text' },
+            { title: 'CRPInfo', desc: 'Land conservation program portal.', tags: ['Vue.js', 'CI/CD'], category: 'fullstack gigabit devops', icon: 'mountain', link: 'https://crpinfo.com' },
+            { title: 'Top Dentistry', desc: 'Multi-tenant, AI-driven platform for dentists.', tags: ['PERN', 'React', 'Node.js', 'CI/CD'], category: 'fullstack gigabit devops ai', icon: 'tooth' },
+            { title: 'Scheduling System', desc: 'Appointment and schedule automation.', tags: ['VILT', 'Cloudways'], category: 'fullstack gigabit', icon: 'calendar-days' },
+            { title: 'Gigaware', desc: 'An e-commerce platform for selling scripts.', tags: ['Laravel', 'Vue.js', 'MySQL'], category: 'ecommerce gigabit devops', icon: 'code', link: 'https://gigaware.co' },
+            { title: 'The Write Choice Docs', desc: 'Document provider for researchers.', tags: ['VILT', 'MySQL', 'Stripe'], category: 'fullstack gigabit devops', icon: 'book-marked', link: 'https://twcd.us' },
+            { title: 'Luxbeyond', desc: 'E-commerce and request-based ordering.', tags: ['Laravel', 'Vue.js', 'bKash'], category: 'ecommerce', icon: 'gem', link: 'https://luxbeyond.store' },
+            { title: 'Ettabashop', desc: 'A full-featured e-commerce application.', tags: ['Laravel', 'Vue.js', 'Tailwind CSS'], category: 'ecommerce', icon: 'shopping-cart', link: 'https://ettabashop.com/' },
+            { title: 'Jamia Darul Falah', desc: 'Institutional application with donations.', tags: ['Laravel', 'Bootstrap', 'MySQL'], category: 'fullstack', icon: 'school', link: 'https://jamiadarulfalah.com' }
+        ];
+
+        document.addEventListener('DOMContentLoaded', function() {
+            gsap.registerPlugin(ScrollTrigger, Flip);
+
+            // --- Custom Cursor ---
+            const cursorDot = document.getElementById('cursor-dot');
+            const cursorOutline = document.getElementById('cursor-outline');
+            
+            gsap.set([cursorDot, cursorOutline], { xPercent: -50, yPercent: -50 });
+
+            window.addEventListener('mousemove', e => {
+                gsap.to(cursorDot, 0.2, { x: e.clientX, y: e.clientY });
+                gsap.to(cursorOutline, 0.6, { x: e.clientX, y: e.clientY, ease: "power2.out" });
+            });
+            
+            document.querySelectorAll('a, button, .interactive-card').forEach(el => {
+                el.addEventListener('mouseenter', () => document.body.classList.add('hovered'));
+                el.addEventListener('mouseleave', () => document.body.classList.remove('hovered'));
+            });
+            
+            // --- Project Population ---
+            const projectGrid = document.querySelector('#project-grid');
+            if(projectGrid) {
+                projectsData.forEach(p => {
+                    const projectEl = document.createElement('div');
+                    projectEl.className = 'interactive-card rounded-lg p-6 project-card';
+                    projectEl.dataset.category = p.category;
+                    const tagsHTML = p.tags.map(tag => `<span class="tag">${tag}</span>`).join('');
+                    
+                    const linkIcon = p.link ? `<a href="${p.link}" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-teal-600 transition-colors"><i data-lucide="arrow-up-right-square" class="w-5 h-5"></i></a>` : '';
+
+                    projectEl.innerHTML = `
+                        <div class="flex justify-between items-start">
+                             <h4 class="font-bold text-lg text-gray-800 pr-4">${p.title}</h4>
+                             <div class="flex items-center space-x-2 flex-shrink-0">
+                                <i data-lucide="${p.icon || 'folder'}" class="w-5 h-5 text-gray-400"></i>
+                                ${linkIcon}
+                             </div>
+                        </div>
+                        <p class="mt-2 text-gray-600">${p.desc}</p>
+                        <div class="mt-4 flex flex-wrap gap-2">${tagsHTML}</div>
+                    `;
+                    projectGrid.appendChild(projectEl);
+                });
+                lucide.createIcons(); // Re-run lucide to render new icons
+            }
+
+            // --- Project Filtering ---
+            const tabButtons = document.querySelectorAll('.project-tab-btn');
+            const projectCards = document.querySelectorAll('.project-card');
+
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    if (button.classList.contains('active')) return;
+                    const filter = button.dataset.tab;
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+
+                    const state = Flip.getState(projectCards, {props: "display"}); 
+
+                    projectCards.forEach(card => {
+                        const categories = card.dataset.category;
+                        const shouldShow = filter === 'all' || (categories && categories.includes(filter));
+                        card.style.display = shouldShow ? 'block' : 'none';
+                    });
+                    
+                    Flip.from(state, {
+                        duration: 0.7,
+                        scale: true,
+                        ease: "expo.inOut",
+                        stagger: 0.05,
+                        onEnter: elements => gsap.from(elements, { opacity: 0, scale: 0.8, duration: 0.5 }),
+                        onLeave: elements => gsap.to(elements, { opacity: 0, scale: 0.8, duration: 0.3 })
+                    });
+                });
+            });
+
+            // --- Navigation Active State on Scroll ---
+            const navLinks = document.querySelectorAll('.nav-link');
+            const sections = document.querySelectorAll('main section');
+
+            sections.forEach(section => {
+                ScrollTrigger.create({
+                    trigger: section,
+                    start: "top center",
+                    end: "bottom center",
+                    onToggle: self => {
+                        const link = document.querySelector(`.nav-link[href="#${section.id}"]`);
+                        if(self.isActive) {
+                             navLinks.forEach(l => l.classList.remove('active'));
+                             if(link) link.classList.add('active');
+                        }
+                    }
+                });
+            });
+
+            // --- Mobile Menu Logic ---
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenuCloseButton = document.getElementById('mobile-menu-close-button');
+            const mobileMenuPanel = document.getElementById('mobile-menu-panel');
+            const mobileMenu = document.getElementById('mobile-menu');
+            const mobileLinks = document.querySelectorAll('.mobile-link');
+            
+            const openMenu = () => {
+                mobileMenuPanel.classList.remove('hidden');
+                gsap.to(mobileMenu, { x: 0, duration: 0.4, ease: 'power3.out' });
+            };
+            const closeMenu = () => {
+                gsap.to(mobileMenu, { x: '100%', duration: 0.3, ease: 'power3.in', onComplete: () => {
+                    mobileMenuPanel.classList.add('hidden');
+                }});
+            };
+
+            mobileMenuButton.addEventListener('click', openMenu);
+            mobileMenuCloseButton.addEventListener('click', closeMenu);
+            mobileLinks.forEach(link => link.addEventListener('click', closeMenu));
+            mobileMenuPanel.addEventListener('click', (e) => {
+                if(e.target === mobileMenuPanel) {
+                    closeMenu();
+                }
+            });
+
+            // --- Initial Fade-in Animation ---
+            gsap.from("main > *", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out"
+            });
+             gsap.from("header > div > *", {
+                opacity: 0,
+                y: 30,
+                duration: 1,
+                stagger: 0.2,
+                ease: "power3.out",
+                delay: 0.2
+            });
+        });
+    </script>
+</body>
 </html>
+
