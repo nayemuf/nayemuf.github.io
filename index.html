@@ -3,27 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nayem Uddin - Full Stack Software Developer</title>
+    <title>Nayem Uddin - Full-Stack Software Developer</title>
+    <link rel="shortcut icon" href="assets/nayem-uddin.png" type="image/x-icon">
 
     <!-- SEO Meta Tags -->
     <meta name="description" content="Portfolio of Nayem Uddin, a full-stack software developer from Dhaka, Bangladesh, specializing in Laravel, React, Node.js, and Python/AI. Explore projects and experience.">
     <meta name="keywords" content="Nayem Uddin, Software Developer, Full Stack Developer, Laravel, React, Node.js, Vue.js, PHP, Python, AI, Portfolio, Bangladesh">
     <meta name="author" content="Nayem Uddin">
-    <link rel="canonical" href="YOUR_CANONICAL_URL"> <!-- TODO: Replace with your actual domain -->
+    <!-- TODO: Replace with your actual domain -->
+    <link rel="canonical" href="https://nayemuf.github.io"> 
 
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
-    <meta property="og:url" content="YOUR_CANONICAL_URL"> <!-- TODO: Replace with your actual domain -->
+    <meta property="og:url" content="https://nayemuf.github.io">
     <meta property="og:title" content="Nayem Uddin - Full Stack Software Developer">
     <meta property="og:description" content="Full-stack software developer specializing in Laravel, React, Node.js, and Python/AI.">
-    <meta property="og:image" content="URL_TO_YOUR_OG_IMAGE"> <!-- TODO: Replace with a direct link to a preview image (e.g., on imgbb.com) -->
+    <!-- TODO: Replace with a direct link to a preview image -->
+    <meta property="og:image" content="https://placehold.co/1200x630/0d9488/FFFFFF?text=Nayem+Uddin"> 
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="YOUR_CANONICAL_URL"> <!-- TODO: Replace with your actual domain -->
+    <meta property="twitter:url" content="https://nayemuf.github.io">
     <meta property="twitter:title" content="Nayem Uddin - Full Stack Software Developer">
     <meta property="twitter:description" content="Full-stack software developer specializing in Laravel, React, Node.js, and Python/AI.">
-    <meta property="twitter:image" content="URL_TO_YOUR_OG_IMAGE"> <!-- TODO: Replace with a direct link to a preview image -->
+    <!-- TODO: Replace with a direct link to a preview image -->
+    <meta property="twitter:image" content="https://placehold.co/1200x630/0d9488/FFFFFF?text=Nayem+Uddin">
 
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -42,8 +46,8 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Nayem Uddin",
-      "jobTitle": "Software Developer",
-      "url": "YOUR_CANONICAL_URL",
+      "jobTitle": "Full-Stack Software Developer",
+      "url": "https://nayemuf.github.io",
       "sameAs": [
         "https://github.com/nayemuf",
         "https://linkedin.com/in/nayemuf"
@@ -61,7 +65,10 @@
             --accent-color-light: #ccfbf1; /* teal-100 */
         }
         
-        html { cursor: none; }
+        /* Hide default cursor on desktop */
+        @media (pointer: fine) {
+            html { cursor: none; }
+        }
 
         body {
             font-family: 'Manrope', sans-serif;
@@ -74,7 +81,16 @@
             pointer-events: none;
             border-radius: 50%;
             z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease-in-out;
         }
+
+        @media (pointer: fine) {
+            #cursor-dot, #cursor-outline {
+                opacity: 1;
+            }
+        }
+
         #cursor-dot {
             width: 8px; height: 8px;
             background-color: var(--accent-color);
@@ -122,7 +138,6 @@
             box-shadow: 0 10px 20px rgba(0,0,0,0.05);
             border-color: #D1D5DB;
         }
-
         .section-title {
             font-size: 1.125rem; font-weight: 800;
             letter-spacing: 0.05em; text-transform: uppercase;
@@ -140,6 +155,16 @@
         }
         .project-tab-btn:hover { background-color: #F3F4F6; color: var(--text-color-main); }
         .project-tab-btn.active { background-color: var(--accent-color); color: white; border-color: var(--accent-color); }
+        
+        .experience-list { list-style-position: outside; padding-left: 1.25rem; }
+        .experience-list li { margin-bottom: 0.75rem; position: relative; }
+        .experience-list li::before {
+            content: '•';
+            color: var(--accent-color);
+            font-weight: bold; display: inline-block;
+            width: 1em; margin-left: -1.25em;
+            position: absolute; top: 0.05em; left: 0.25em;
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -183,8 +208,8 @@
         <header class="hidden lg:w-2/5 lg:h-screen lg:flex lg:flex-col lg:justify-between lg:py-24 px-6 lg:px-12 lg:sticky lg:top-0">
             <div>
                 <h1 class="text-4xl lg:text-5xl font-extrabold text-gray-800 tracking-tight">Nayem Uddin</h1>
-                <h2 class="mt-3 text-lg font-medium text-gray-600">Software Developer</h2>
-                <p class="mt-4 max-w-xs text-gray-500">I build elegant and efficient digital experiences from concept to completion.</p>
+                <h2 class="mt-3 text-lg font-semibold text-teal-600">Full-Stack Software Developer | Laravel, React, Python/AI</h2>
+                <p class="mt-4 max-w-xs text-gray-500">A results-driven Full-Stack Developer specializing in the Laravel and React ecosystems, with a growing expertise in building Python-based AI solutions. I thrive on solving complex problems and delivering clean, scalable, and high-performance web applications.</p>
             
                 <nav id="main-nav" class="hidden lg:block mt-16">
                     <ul class="space-y-4">
@@ -197,17 +222,15 @@
                     </ul>
                 </nav>
             </div>
-            <div class="flex items-center space-x-6 mt-8 lg:mt-0">
-                <a href="https://github.com/nayemuf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-800 transition-colors"><i data-lucide="github" class="w-6 h-6"></i></a>
-                <a href="https://linkedin.com/in/nayemuf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-800 transition-colors"><i data-lucide="linkedin" class="w-6 h-6"></i></a>
-            </div>
         </header>
 
         <!-- Right Scrollable Column -->
         <main class="lg:w-3/5 py-12 lg:py-24 px-6 lg:px-12 pt-24 lg:pt-24">
             <section id="about" class="mb-24 scroll-mt-24">
                 <p class="text-lg leading-relaxed">
-                    My journey into programming began with a curiosity for how things work, which quickly evolved into a passion for building elegant and efficient solutions. While my roots are in the Laravel ecosystem, I've eagerly expanded my expertise to include technologies like React, Node.js, and Python-based AI frameworks. I enjoy the challenge of diving into an existing codebase, understanding its architecture, and making meaningful contributions.
+                    With a foundation in PHP/Laravel and a passion for modern, interactive user experiences, I have dedicated myself to mastering technologies like React, Node.js, and Vue.js. This allows me to bridge the gap between robust back-end logic and intuitive front-end interfaces.
+                    <br><br>
+                    Recently, I've been captivated by the potential of AI and have been actively developing solutions with Python and frameworks like LangChain. I am a proactive learner who enjoys dissecting complex legacy systems and collaborating with teams to introduce modern, efficient solutions.
                 </p>
             </section>
 
@@ -217,7 +240,12 @@
                     <div class="interactive-card rounded-lg p-6 group">
                         <h4 class="font-bold text-lg text-gray-800 group-hover:text-teal-600 transition-colors">Software Developer · Gigabit Ltd.</h4>
                         <p class="text-sm text-gray-500 mt-1">JAN 2024 - PRESENT</p>
-                        <p class="mt-4">Developed and maintained full-stack features for multiple enterprise applications. Engineered key modules for HRM, e-Health, and document collaboration systems. Built a Python-based AI agent using LangChain.</p>
+                        <ul class="mt-4 text-gray-600 experience-list">
+                            <li>Engineered core modules for enterprise-level HRM, e-Health, and document collaboration systems, enhancing functionality and user engagement across multiple platforms.</li>
+                            <li>Architected and deployed a Python-based AI agent with LangChain to parse and analyze complex documents, reducing manual data processing time by an estimated 30%.</li>
+                            <li>Spearheaded the integration of modern front-end frameworks like React and Vue.js into existing Laravel projects, improving performance and maintainability.</li>
+                            <li>Implemented and maintained CI/CD pipelines, automating testing and deployment processes to ensure code quality and faster release cycles.</li>
+                        </ul>
                         <div class="mt-4 flex flex-wrap gap-2">
                             <span class="tag">PHP</span><span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">React</span><span class="tag">Node.js</span><span class="tag">Python</span><span class="tag">CI/CD</span>
                         </div>
@@ -225,7 +253,11 @@
                      <div class="interactive-card rounded-lg p-6 group">
                         <h4 class="font-bold text-lg text-gray-800 group-hover:text-teal-600 transition-colors">Laravel Developer · Wetopia Global</h4>
                         <p class="text-sm text-gray-500 mt-1">OCT 2023 - DEC 2023</p>
-                        <p class="mt-4">Developed backend services for a three-tier architecture web application and collaborated with the frontend team to integrate Vue.js components with Laravel APIs.</p>
+                        <ul class="mt-4 text-gray-600 experience-list">
+                           <li>Developed and optimized scalable RESTful APIs using Laravel to support a high-traffic, three-tier web application.</li>
+                           <li>Collaborated closely with the front-end team to integrate Vue.js components, ensuring seamless data flow and a responsive, interactive user experience.</li>
+                           <li>Contributed to database design and query optimization in MySQL, improving API response times and overall application performance.</li>
+                        </ul>
                          <div class="mt-4 flex flex-wrap gap-2">
                              <span class="tag">Laravel</span><span class="tag">Vue.js</span><span class="tag">PHP</span><span class="tag">MySQL</span>
                         </div>
@@ -258,32 +290,58 @@
             </section>
 
             <section id="achievements" class="mb-24 scroll-mt-24">
-                <h3 class="section-title mb-8">Achievements</h3>
-                <div class="grid grid-cols-1 gap-6">
+                <h3 class="section-title mb-8">Achievements & Certifications</h3>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <div class="interactive-card rounded-lg p-6 group">
                          <h4 class="font-bold text-lg text-gray-800">ICPC World Finals 2023</h4>
-                         <p class="text-sm text-gray-500">Placed 154th in the Asia Dhaka onsite regional contest.</p>
-                    </div>
-                    <div class="interactive-card rounded-lg p-6 group">
-                         <h4 class="font-bold text-lg text-gray-800">HackerRank Gold - Problem Solving (Java)</h4>
+                         <p class="text-sm text-gray-500">Achieved 154th place in the prestigious Asia Dhaka onsite regional contest.</p>
                     </div>
                     <div class="interactive-card rounded-lg p-6 group">
                          <h4 class="font-bold text-lg text-gray-800">Industry Speaker @ City University</h4>
-                         <p class="text-sm text-gray-500">Presented on "Mastering Industry Tech Stacks".</p>
+                         <p class="text-sm text-gray-500">Invited to present a technical session on "Mastering Industry Tech Stacks" to undergraduate students.</p>
+                    </div>
+                    <div class="interactive-card rounded-lg p-6 group">
+                        <h4 class="font-bold text-lg text-gray-800">HackerRank - Java (Basic)</h4>
+                        <p class="text-sm text-gray-500">Verified proficiency in fundamental Java programming concepts.</p>
+                   </div>
+                   <div class="interactive-card rounded-lg p-6 group">
+                        <h4 class="font-bold text-lg text-gray-800">HackerRank - JavaScript (Basic)</h4>
+                        <p class="text-sm text-gray-500">Demonstrated core knowledge of JavaScript principles and syntax.</p>
+                   </div>
+                   <div class="interactive-card rounded-lg p-6 group">
+                        <h4 class="font-bold text-lg text-gray-800">HackerRank - SQL (Basic)</h4>
+                        <p class="text-sm text-gray-500">Certified in foundational SQL for database querying and management.</p>
+                   </div>
+                    <div class="interactive-card rounded-lg p-6 group">
+                         <h4 class="font-bold text-lg text-gray-800">HackerRank - Problem Solving (Java)</h4>
+                         <p class="text-sm text-gray-500">Earned a Gold badge for proficiency in algorithmic problem-solving.</p>
                     </div>
                 </div>
             </section>
 
              <section id="contact" class="mb-24 scroll-mt-24">
-                <h3 class="section-title mb-8">Contact</h3>
-                <p class="text-lg mb-4">I'm currently open to new opportunities. Feel free to say hello!</p>
-                <a href="https://wa.me/8801743372044" target="_blank" rel="noopener noreferrer" class="inline-block bg-teal-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-600 transition-colors">
-                    Say Hello on WhatsApp
-                </a>
+                <h3 class="section-title mb-8">Get In Touch</h3>
+                <p class="text-lg mb-4">I'm currently open to new opportunities and collaborations. My inbox is always open, whether you have a question or just want to say hi, I'll try my best to get back to you!</p>
+                <div class="mt-8 flex flex-wrap items-center gap-6">
+                    <a href="mailto:nayem.uddin.dev@gmail.com" class="inline-block bg-teal-500 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-600 transition-colors">
+                        Say Hello
+                    </a>
+                    <div class="flex items-center space-x-6">
+                        <a href="https://github.com/nayemuf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-800 transition-colors" aria-label="Github">
+                            <i data-lucide="github" class="w-8 h-8"></i>
+                        </a>
+                        <a href="https://linkedin.com/in/nayemuf" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-800 transition-colors" aria-label="LinkedIn">
+                            <i data-lucide="linkedin" class="w-8 h-8"></i>
+                        </a>
+                        <a href="https://wa.me/8801743372044" target="_blank" rel="noopener noreferrer" class="text-gray-400 hover:text-gray-800 transition-colors" aria-label="WhatsApp">
+                            <i data-lucide="message-circle" class="w-8 h-8"></i>
+                        </a>
+                    </div>
+                </div>
             </section>
             
             <footer class="text-center text-sm text-gray-400 mt-24">
-                 <p>&copy; Nayem Uddin. All right reserved . Powered by Gemini</p>
+                 <p>&copy; 2024 Nayem Uddin. All rights reserved.</p>
             </footer>
         </main>
     </div>
@@ -292,19 +350,19 @@
         lucide.createIcons();
 
         const projectsData = [
-            { title: 'AI Sales Agent', desc: 'Intelligent agent for parsing documents.', tags: ['Python', 'LangChain'], category: 'ai fullstack gigabit', icon: 'brain-circuit' },
-            { title: 'AI-Powered ATS', desc: 'Analyzes resumes against job descriptions.', tags: ['Python', 'spaCy'], category: 'ai fullstack', icon: 'file-scan' },
-            { title: 'West Row Kitchen', desc: 'AI-powered cloud kitchen platform.', tags: ['PERN', 'PostgreSQL', 'Stripe', 'CI/CD'], category: 'fullstack gigabit devops ai', icon: 'chef-hat', link: 'https://westrowkitchen.com' },
-            { title: 'TiNHiH Portal', desc: 'CRM for a foundation to manage donations.', tags: ['PERN', 'Laravel', 'Vue.js', 'Stripe'], category: 'fullstack gigabit devops', icon: 'heart-handshake', link: 'https://tinhinh.org' },
-            { title: 'Longleap', desc: 'Document collaboration for researchers.', tags: ['Vue.js', 'Laravel', 'S3', 'Stripe'], category: 'fullstack gigabit devops', icon: 'file-text' },
-            { title: 'CRPInfo', desc: 'Land conservation program portal.', tags: ['Vue.js', 'CI/CD'], category: 'fullstack gigabit devops', icon: 'mountain', link: 'https://crpinfo.com' },
-            { title: 'Top Dentistry', desc: 'Multi-tenant, AI-driven platform for dentists.', tags: ['PERN', 'React', 'Node.js', 'CI/CD'], category: 'fullstack gigabit devops ai', icon: 'tooth' },
-            { title: 'Scheduling System', desc: 'Appointment and schedule automation.', tags: ['VILT', 'Cloudways'], category: 'fullstack gigabit', icon: 'calendar-days' },
-            { title: 'Gigaware', desc: 'An e-commerce platform for selling scripts.', tags: ['Laravel', 'Vue.js', 'MySQL'], category: 'ecommerce gigabit devops', icon: 'code', link: 'https://gigaware.co' },
-            { title: 'The Write Choice Docs', desc: 'Document provider for researchers.', tags: ['VILT', 'MySQL', 'Stripe'], category: 'fullstack gigabit devops', icon: 'book-marked', link: 'https://twcd.us' },
-            { title: 'Luxbeyond', desc: 'E-commerce and request-based ordering.', tags: ['Laravel', 'Vue.js', 'bKash'], category: 'ecommerce', icon: 'gem', link: 'https://luxbeyond.store' },
-            { title: 'Ettabashop', desc: 'A full-featured e-commerce application.', tags: ['Laravel', 'Vue.js', 'Tailwind CSS'], category: 'ecommerce', icon: 'shopping-cart', link: 'https://ettabashop.com/' },
-            { title: 'Jamia Darul Falah', desc: 'Institutional application with donations.', tags: ['Laravel', 'Bootstrap', 'MySQL'], category: 'fullstack', icon: 'school', link: 'https://jamiadarulfalah.com' }
+            { title: 'AI Sales Agent', desc: 'Developed an intelligent LangChain agent to automate the analysis of sales documents, streamlining the lead qualification process.', tags: ['Python', 'LangChain'], category: 'ai fullstack gigabit', icon: 'brain-circuit' },
+            { title: 'AI-Powered ATS', desc: 'Built an Applicant Tracking System that uses spaCy for NLP to analyze and score resumes against job descriptions.', tags: ['Python', 'spaCy'], category: 'ai fullstack', icon: 'file-scan' },
+            { title: 'West Row Kitchen', desc: 'A multi-tenant cloud kitchen platform with AI-driven menu suggestions and a full order management pipeline.', tags: ['PERN', 'PostgreSQL', 'Stripe', 'CI/CD'], category: 'fullstack gigabit devops ai', icon: 'chef-hat', link: 'https://westrowkitchen.com' },
+            { title: 'TiNHiH Portal', desc: 'A complete CRM portal for a non-profit foundation to manage donations, volunteers, and outreach campaigns.', tags: ['PERN', 'Laravel', 'Vue.js', 'Stripe'], category: 'fullstack gigabit devops', icon: 'heart-handshake', link: 'https://tinhinh.org' },
+            { title: 'Longleap', desc: 'A secure, real-time document collaboration platform for academic researchers, featuring version control and S3 integration.', tags: ['Vue.js', 'Laravel', 'S3', 'Stripe'], category: 'fullstack gigabit devops', icon: 'file-text' },
+            { title: 'CRPInfo', desc: 'An informational portal and management system for a national land conservation program, deployed with a CI/CD pipeline.', tags: ['Vue.js', 'CI/CD'], category: 'fullstack gigabit devops', icon: 'mountain', link: 'https://crpinfo.com' },
+            { title: 'Top Dentistry', desc: 'A multi-tenant SaaS platform for dental practices, featuring AI-driven patient scheduling and record analysis.', tags: ['PERN', 'React', 'Node.js', 'CI/CD'], category: 'fullstack gigabit devops ai', icon: 'tooth' },
+            { title: 'Scheduling System', desc: 'A robust appointment and staff scheduling system designed to automate and optimize bookings for service-based businesses.', tags: ['VILT', 'Cloudways'], category: 'fullstack gigabit', icon: 'calendar-days' },
+            { title: 'Gigaware', desc: 'A digital marketplace (e-commerce) for developers to buy and sell software scripts and code snippets.', tags: ['Laravel', 'Vue.js', 'MySQL'], category: 'ecommerce gigabit devops', icon: 'code', link: 'https://gigaware.co' },
+            { title: 'The Write Choice Docs', desc: 'A specialized document provider service for academic researchers, with secure payment integration via Stripe.', tags: ['VILT', 'MySQL', 'Stripe'], category: 'fullstack gigabit devops', icon: 'book-marked', link: 'https://twcd.us' },
+            { title: 'Luxbeyond', desc: 'An e-commerce platform for luxury goods, featuring both direct sales and a custom request-based ordering system.', tags: ['Laravel', 'Vue.js', 'bKash'], category: 'ecommerce', icon: 'gem', link: 'https://luxbeyond.store' },
+            { title: 'Ettabashop', desc: 'A full-featured e-commerce application built from the ground up, with inventory management and order processing.', tags: ['Laravel', 'Vue.js', 'Tailwind CSS'], category: 'ecommerce', icon: 'shopping-cart', link: 'https://ettabashop.com/' },
+            { title: 'Jamia Darul Falah', desc: 'An institutional web application for an educational institute, featuring a secure portal for online donations.', tags: ['Laravel', 'Bootstrap', 'MySQL'], category: 'fullstack', icon: 'school', link: 'https://jamiadarulfalah.com' }
         ];
 
         document.addEventListener('DOMContentLoaded', function() {
@@ -345,7 +403,7 @@
                                 ${linkIcon}
                              </div>
                         </div>
-                        <p class="mt-2 text-gray-600">${p.desc}</p>
+                        <p class="mt-2 text-sm text-gray-600">${p.desc}</p>
                         <div class="mt-4 flex flex-wrap gap-2">${tagsHTML}</div>
                     `;
                     projectGrid.appendChild(projectEl);
@@ -411,9 +469,11 @@
             
             const openMenu = () => {
                 mobileMenuPanel.classList.remove('hidden');
+                document.body.style.overflow = 'hidden';
                 gsap.to(mobileMenu, { x: 0, duration: 0.4, ease: 'power3.out' });
             };
             const closeMenu = () => {
+                document.body.style.overflow = '';
                 gsap.to(mobileMenu, { x: '100%', duration: 0.3, ease: 'power3.in', onComplete: () => {
                     mobileMenuPanel.classList.add('hidden');
                 }});
@@ -448,4 +508,5 @@
     </script>
 </body>
 </html>
+
 
