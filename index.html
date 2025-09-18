@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nayem Uddin - Full-Stack Software Engineer</title>
+    <title>Nayem Uddin - Full-Stack Software Developer</title>
     <link rel="shortcut icon" href="assets/nayem-uddin.png" type="image/x-icon">
 
     <!-- SEO Meta Tags (Updated) -->
-    <meta name="description" content="Portfolio of Nayem Uddin, a full-stack Software Engineer from Dhaka, Bangladesh, specializing in PHP, Laravel, Vue.js, and Socket.IO. Explore projects and experience.">
-    <meta name="keywords" content="Nayem Uddin, Software Engineer, Full Stack Developer, PHP, Laravel, Vue.js, Socket.IO, Real-time Applications, Portfolio, Bangladesh">
+    <meta name="description" content="Portfolio of Nayem Uddin, a full-stack software developer from Dhaka, Bangladesh, specializing in PHP, Laravel, Vue.js, and Socket.IO. Explore projects and experience.">
+    <meta name="keywords" content="Nayem Uddin, Software Developer, Full Stack Developer, PHP, Laravel, Vue.js, Socket.IO, Real-time Applications, Portfolio, Bangladesh">
     <meta name="author" content="Nayem Uddin">
     <!-- TODO: Replace with your actual domain -->
     <link rel="canonical" href="https://nayemuf.github.io"> 
@@ -16,16 +16,16 @@
     <!-- Open Graph / Facebook (Updated) -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://nayemuf.github.io">
-    <meta property="og:title" content="Nayem Uddin - Full Stack Software Engineer">
-    <meta property="og:description" content="Full-stack Software Engineer specializing in PHP, Laravel, Vue.js, and Socket.IO.">
+    <meta property="og:title" content="Nayem Uddin - Full stack Software Engineer">
+    <meta property="og:description" content="Full-stack software developer specializing in PHP, Laravel, Vue.js, and Socket.IO.">
     <!-- TODO: Replace with a direct link to a preview image -->
     <meta property="og:image" content="https://placehold.co/1200x630/0d9488/FFFFFF?text=Nayem+Uddin"> 
 
     <!-- Twitter (Updated) -->
     <meta property="twitter:card" content="summary_large_image">
     <meta property="twitter:url" content="https://nayemuf.github.io">
-    <meta property="twitter:title" content="Nayem Uddin - Full Stack Software Engineer">
-    <meta property="twitter:description" content="Full-stack Software Engineer specializing in PHP, Laravel, Vue.js, and Socket.IO.">
+    <meta property="twitter:title" content="Nayem Uddin - Full stack Software Engineer">
+    <meta property="twitter:description" content="Full-stack software developer specializing in PHP, Laravel, Vue.js, and Socket.IO.">
     <!-- TODO: Replace with a direct link to a preview image -->
     <meta property="twitter:image" content="https://placehold.co/1200x630/0d9488/FFFFFF?text=Nayem+Uddin">
 
@@ -54,7 +54,7 @@
       "@context": "https://schema.org",
       "@type": "Person",
       "name": "Nayem Uddin",
-      "jobTitle": "Full-Stack Software Engineer",
+      "jobTitle": "Full-Stack Software Developer",
       "url": "https://nayemuf.github.io",
       "sameAs": [
         "https://github.com/nayemuf",
@@ -190,6 +190,114 @@
         html[data-theme='dark'] div.code-toolbar > .toolbar .toolbar-item > button {
              color: var(--background) !important;
         }
+
+        /* Skill Tree Styles */
+        .skill-tree {
+            position: relative;
+            padding: 2rem 0;
+        }
+        .skill-tree::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 2px;
+            height: 100%;
+            background-color: var(--border);
+        }
+        .skill-branch-title {
+            display: inline-block;
+            background-color: var(--background);
+            color: var(--foreground);
+            padding: 0.5rem 1.5rem;
+            border-radius: 9999px;
+            border: 1px solid var(--border);
+            font-weight: 800;
+            font-size: 1.25rem;
+            position: relative;
+            z-index: 1;
+        }
+        .skill-node {
+            position: relative;
+            width: 50%;
+            padding: 1rem 3rem;
+        }
+        .skill-node::before { /* Horizontal line */
+            content: '';
+            position: absolute;
+            top: 2.25rem;
+            width: 3rem;
+            height: 2px;
+            background-color: var(--border);
+        }
+        .skill-node::after { /* Circle on timeline */
+            content: '';
+            position: absolute;
+            top: 2rem;
+            width: 1rem;
+            height: 1rem;
+            background-color: var(--background);
+            border: 2px solid var(--brand);
+            border-radius: 50%;
+        }
+        .skill-node:nth-child(odd) {
+            float: left;
+            text-align: right;
+            clear: both;
+        }
+        .skill-node:nth-child(odd)::before { right: 0; }
+        .skill-node:nth-child(odd)::after { right: -0.5rem; }
+
+        .skill-node:nth-child(even) {
+            float: right;
+            text-align: left;
+            clear: both;
+        }
+        .skill-node:nth-child(even)::before { left: 0; }
+        .skill-node:nth-child(even)::after { left: -0.5rem; }
+
+        .skill-node-title {
+            font-weight: 700;
+            font-size: 1.125rem;
+            color: var(--foreground);
+        }
+        .skill-tag {
+            background-color: var(--brand-light);
+            color: var(--brand);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.875rem;
+        }
+        .skill-tag.secondary {
+            background-color: var(--secondary);
+            color: var(--secondary-foreground);
+        }
+        .clearfix::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        @media (max-width: 768px) {
+            .skill-tree::before {
+                left: 1rem;
+            }
+            .skill-node {
+                width: 100%;
+                text-align: left !important;
+                float: none;
+                clear: both;
+                padding-left: 4rem;
+                padding-right: 1rem;
+            }
+            .skill-node:nth-child(odd)::before, .skill-node:nth-child(even)::before {
+                left: 0;
+            }
+            .skill-node:nth-child(odd)::after, .skill-node:nth-child(even)::after {
+                left: 0.5rem;
+            }
+        }
     </style>
 </head>
 <body class="antialiased">
@@ -204,6 +312,7 @@
                 <nav class="hidden md:flex md:items-center md:space-x-8">
                     <a href="#about" class="nav-link font-medium hover:text-teal-500 transition-colors">About</a>
                     <a href="#experience" class="nav-link font-medium hover:text-teal-500 transition-colors">Experience</a>
+                    <a href="#skills" class="nav-link font-medium hover:text-teal-500 transition-colors">Skills</a>
                     <a href="#projects" class="nav-link font-medium hover:text-teal-500 transition-colors">Projects</a>
                     <a href="#achievements" class="nav-link font-medium hover:text-teal-500 transition-colors">Achievements</a>
                 </nav>
@@ -231,6 +340,7 @@
                 <ul class="flex flex-col space-y-6 text-lg font-medium text-right">
                     <li><a href="#about" class="mobile-link">About</a></li>
                     <li><a href="#experience" class="mobile-link">Experience</a></li>
+                    <li><a href="#skills" class="mobile-link">Skills</a></li>
                     <li><a href="#projects" class="mobile-link">Projects</a></li>
                     <li><a href="#achievements" class="mobile-link">Achievements</a></li>
                     <li><a href="#contact" class="mobile-link">Contact</a></li>
@@ -246,16 +356,37 @@
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center w-full">
                     <div class="text-center lg:text-left">
                         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter" style="color: var(--foreground);">Nayem Uddin</h1>
-                        <h2 class="mt-3 text-xl md:text-2xl font-semibold" style="color: var(--brand);">Full-Stack Software Engineer | PHP, Laravel, Vue.js & Socket.IO</h2>
+                        <h2 class="mt-3 text-xl md:text-2xl font-semibold" style="color: var(--brand);">Full-Stack Software Developer | PHP, Laravel, Vue.js & Socket.IO</h2>
                         <p class="mt-6 max-w-2xl mx-auto lg:mx-0 text-lg">A results-driven developer specializing in the PHP, Laravel, and Vue.js ecosystem, with expertise in building real-time, high-performance web applications using Socket.IO.</p>
-                        <div class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
-                            <a href="assets/Nayem Uddin - Software Engineer.pdf" target="_blank" class="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 font-bold py-3 px-6 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-transform hover:scale-105 w-full sm:w-auto flex items-center gap-2 justify-center">
-                                <i data-lucide="cloud-download" class="animate-bounce duration-900"></i>
-                                Download Resume</a>
-                            <a href="#contact" class="bg-teal-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-700 transition-transform hover:scale-105 w-full sm:w-auto">Get in Touch</a>
-                            <!-- TODO: Add your resume link -->
-                            <a href="https://www.canva.com/design/DAGy4SOIMXk/2BeZgQyyg58wgWimMYw7Yw/view?utm_content=DAGy4SOIMXk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he53e3ec0f4" target="_blank" class="bg-green-100 text-green-800 dark:bg-green-800 flex items-center gap-1 justify-center dark:text-green-200 font-bold py-3 px-6 rounded-lg hover:bg-green-200 dark:hover:bg-green-700 transition-transform hover:scale-105 w-full sm:w-auto">Live Resume <span class="animate-ping duration-900"><div class="bg-red-500 rounded-full w-2 h-2"></div></span></a>
-                        </div>
+                        <div
+                class="mt-8 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4"
+              >
+                <a
+                  href="assets/Nayem Uddin - Software Engineer.pdf"
+                  target="_blank"
+                  class="bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200 font-bold py-3 px-6 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-transform hover:scale-105 w-full sm:w-auto flex items-center gap-2 justify-center"
+                >
+                  <i
+                    data-lucide="cloud-download"
+                    class="animate-bounce duration-900"
+                  ></i>
+                  Download Resume</a
+                >
+                <a
+                  href="#contact"
+                  class="bg-teal-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-700 transition-transform hover:scale-105 w-full sm:w-auto"
+                  >Get in Touch</a
+                >
+                <!-- TODO: Add your resume link -->
+                <a
+                  href="https://www.canva.com/design/DAGy4SOIMXk/2BeZgQyyg58wgWimMYw7Yw/view?utm_content=DAGy4SOIMXk&utm_campaign=designshare&utm_medium=link2&utm_source=uniquelinks&utlId=he53e3ec0f4"
+                  target="_blank"
+                  class="bg-green-100 text-green-800 dark:bg-green-800 flex items-center gap-1 justify-center dark:text-green-200 font-bold py-3 px-6 rounded-lg hover:bg-green-200 dark:hover:bg-green-700 transition-transform hover:scale-105 w-full sm:w-auto"
+                  >Live Resume
+                  <span class="animate-ping duration-900"
+                    ><div class="bg-red-500 rounded-full w-2 h-2"></div></span
+                ></a>
+              </div>
                     </div>
                     <div class="relative h-64 md:h-80 w-full max-w-md mx-auto">
                          <canvas id="hero-solving-chart"></canvas>
@@ -289,7 +420,7 @@
                 <div class="space-y-12">
                      <div class="experience-card glass-card p-6 md:p-8">
                         <div class="flex flex-col sm:flex-row justify-between items-start">
-                            <h4 class="font-bold text-xl mb-1 sm:mb-0" style="color: var(--card-foreground);">Software Engineer · Gigabit Ltd.</h4>
+                            <h4 class="font-bold text-xl mb-1 sm:mb-0" style="color: var(--card-foreground);">Software Developer · Gigabit Ltd.</h4>
                             <p class="text-sm font-medium flex-shrink-0">JAN 2024 - PRESENT</p>
                         </div>
                         <ul class="mt-4 space-y-2 list-disc list-inside">
@@ -318,13 +449,74 @@
                     </div>
                 </div>
             </section>
+
+            <!-- Skills Section -->
+            <section id="skills" class="py-20 scroll-mt-20">
+                <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--foreground);">My Tech Stack</h3>
+                <div class="skill-tree max-w-4xl mx-auto mb-12">
+                    <div class="text-center mb-8">
+                        <h4 class="skill-branch-title">Top Skills</h4>
+                    </div>
+                    <div class="clearfix">
+                        <div class="skill-node">
+                            <div class="skill-node-content">
+                                <h5 class="skill-node-title mb-2">Backend</h5>
+                                <div class="flex flex-wrap gap-2 justify-end"><span class="skill-tag">PHP</span><span class="skill-tag">Laravel</span><span class="skill-tag">Node.js</span><span class="skill-tag">Socket.IO</span></div>
+                            </div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="skill-node-content">
+                                <h5 class="skill-node-title mb-2">Frontend</h5>
+                                <div class="flex flex-wrap gap-2"><span class="skill-tag">Vue.js</span><span class="skill-tag">Tailwind CSS</span><span class="skill-tag">Bootstrap 5</span></div>
+                            </div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="skill-node-content">
+                                <h5 class="skill-node-title mb-2">Databases</h5>
+                                <div class="flex flex-wrap gap-2 justify-end"><span class="skill-tag">SQL</span><span class="skill-tag">MySQL</span><span class="skill-tag">PostgreSQL</span></div>
+                            </div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="skill-node-content">
+                                <h5 class="skill-node-title mb-2">DevOps, Tools & Platforms</h5>
+                                <div class="flex flex-wrap gap-2"><span class="skill-tag">CI/CD</span><span class="skill-tag">Git</span><span class="skill-tag">Linux</span><span class="skill-tag">macOS</span><span class="skill-tag">Replit</span><span class="skill-tag">Cursor</span><span class="skill-tag">Digital Ocean</span><span class="skill-tag">Cloud OS</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                    <div class="text-center my-8 pt-8">
+                        <h4 class="skill-branch-title">Other Hands-On Skills</h4>
+                    </div>
+                    <p class="text-center text-sm mb-6 max-w-2xl mx-auto">Technologies I've contributed to as required. I have a working knowledge and can comfortably work on them.</p>
+                     <div class="clearfix">
+                        <div class="skill-node">
+                            <div class="skill-node-content">
+                                <h5 class="skill-node-title mb-2">Languages & Frameworks</h5>
+                                <div class="flex flex-wrap gap-2 justify-end"><span class="skill-tag secondary">Java</span><span class="skill-tag secondary">Spring Boot</span><span class="skill-tag secondary">Python</span><span class="skill-tag secondary">React</span><span class="skill-tag secondary">Inertia.js</span><span class="skill-tag secondary">jQuery</span><span class="skill-tag secondary">LangChain</span></div>
+                            </div>
+                        </div>
+                        <div class="skill-node">
+                            <div class="skill-node-content">
+                                <h5 class="skill-node-title mb-2">DevOps</h5>
+                                <div class="flex flex-wrap gap-2"><span class="skill-tag secondary">Docker</span></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+            </section>
             
             <!-- Projects Section -->
             <section id="projects" class="py-20 scroll-mt-20">
                  <h3 class="text-3xl font-bold text-center mb-12" style="color: var(--foreground);">Projects</h3>
                  <div id="project-tabs" class="flex flex-wrap justify-center gap-2 sm:gap-4 mb-8">
                     <button class="project-tab-btn active" data-tab="all">All</button>
-                    <button class="project-tab-btn flex items-start" data-tab="live">Live <span class="animate-pulse duration-700"><div class="bg-red-700 rounded-full w-2 h-2"></div></span></button>
+                    <button class="project-tab-btn flex items-start" data-tab="live">
+              Live
+              <span class="animate-pulse duration-700"
+                ><div class="bg-red-700 rounded-full w-2 h-2"></div
+              ></span>
+            </button>
                     <button class="project-tab-btn" data-tab="gigabit">Gigabit</button>
                     <button class="project-tab-btn" data-tab="ai">AI/ML</button>
                     <button class="project-tab-btn" data-tab="fullstack">Full Stack</button>
@@ -689,7 +881,7 @@ class UserService
                 <h3 class="text-3xl font-bold mb-4" style="color: var(--foreground);">Get In Touch</h3>
                 <p class="max-w-2xl mx-auto mb-8">I'm currently open to new opportunities and collaborations. My inbox is always open, whether for a question or just to say hi. I'll get back to you!</p>
                 <div class="flex flex-wrap items-center justify-center gap-6">
-                    <a href="mailto:nayem110899@gmail.com" class="bg-teal-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-700 transition-transform hover:scale-105">
+                    <a href="mailto:nayem.uddin.dev@gmail.com" class="bg-teal-600 text-white font-bold py-3 px-6 rounded-lg hover:bg-teal-700 transition-transform hover:scale-105">
                         Say Hello
                     </a>
                     <div class="flex items-center space-x-6">
@@ -985,4 +1177,5 @@ class UserService
     </script>
 </body>
 </html>
+
 
