@@ -460,7 +460,7 @@
                     <div class="text-center lg:text-left">
                         <h1 class="text-4xl md:text-6xl font-extrabold tracking-tighter"
                             style="color: var(--foreground);">Nayem Uddin</h1>
-                        <h2 class="mt-3 text-xl md:text-2xl font-semibold" style="color: var(--brand);">Senior
+                        <h2 class="mt-3 text-xl md:text-2xl font-semibold" style="color: var(--brand);">Acting Senior
                             Full-Stack Software Engineer | Enterprise Applications & AI Solutions</h2>
                         <p class="mt-6 max-w-2xl mx-auto lg:mx-0 text-lg">Results-driven software engineer with 2+ years
                             of experience building enterprise-level applications, real-time systems, and AI-powered
@@ -494,7 +494,7 @@
                     <div class="lg:col-span-3">
                         <h3 class="text-3xl font-bold mb-6" style="color: var(--foreground);">About Me</h3>
                         <p class="text-lg leading-relaxed" style="color: var(--foreground);">
-                            I am a Senior Full-Stack Software Engineer with 2+ years of experience building
+                            I am an Acting Senior Full-Stack Software Engineer with 2+ years of experience building
                             enterprise-level applications and innovative solutions. My expertise spans the complete
                             development lifecycle, from architecting scalable back-end systems to crafting intuitive
                             user interfaces. I specialize in real-time applications, AI/ML integration, and modern
@@ -1262,15 +1262,6 @@ class UserService
                                 <span class="text-2xl font-bold" style="color: var(--brand);"
                                     id="total-issues">Loading...</span>
                             </div>
-
-                            <div class="flex items-center justify-between">
-                                <div class="flex items-center">
-                                    <i data-lucide="git-pull-request" class="w-5 h-5 text-purple-500 mr-2"></i>
-                                    <span class="font-medium">Pull Requests</span>
-                                </div>
-                                <span class="text-2xl font-bold" style="color: var(--brand);"
-                                    id="total-prs">Loading...</span>
-                            </div>
                         </div>
                         <div class="mt-4 text-center">
                             <p class="text-sm text-gray-500 dark:text-gray-400">
@@ -1660,9 +1651,6 @@ class UserService
                 if (hackerrankEl) hackerrankEl.textContent = stats.hackerrank;
                 if (codechefEl) codechefEl.textContent = stats.codechef;
 
-                // GitHub stats are handled by loadGitHubContributions() function
-                // No need to fetch here to avoid conflicts
-                stats.github = 0; // Will be updated by loadGitHubContributions()
 
                 try {
                     console.log('Fetching LeetCode data...');
@@ -1714,18 +1702,7 @@ class UserService
                     
                     // Update charts with the new LeetCode data
                     if (typeof updateChartsWithRealData === 'function') {
-                        // Get current GitHub data if available
-                        const githubCommits = document.getElementById('github-commits')?.textContent || '3170';
-                        const githubPRs = document.getElementById('github-prs')?.textContent || '150';
-                        const githubIssues = document.getElementById('github-issues')?.textContent || '25';
-                        const githubRepos = document.getElementById('github-repos')?.textContent || '25';
-                        
-                        updateChartsWithRealData(
-                            parseInt(githubCommits) || 3170,
-                            parseInt(githubPRs) || 150,
-                            parseInt(githubIssues) || 25,
-                            parseInt(githubRepos) || 25
-                        );
+                        updateChartsWithRealData();
                     }
                 }
 
@@ -1755,12 +1732,12 @@ class UserService
                 heroChartInstance = new Chart(ctx, {
                     type: 'doughnut',
                     data: {
-                        labels: ['HackerRank', 'LeetCode', 'CodeChef', 'GitHub'],
+                        labels: ['HackerRank', 'LeetCode', 'CodeChef'],
                         datasets: [{
                             label: 'Platform Stats',
-                            data: [stats.hackerrank, stats.leetcode, stats.codechef, stats.github],
-                            backgroundColor: ['rgba(46, 200, 102, 0.7)', 'rgba(255, 161, 22, 0.7)', 'rgba(79, 129, 195, 0.7)', 'rgba(107, 114, 128, 0.7)'],
-                            borderColor: ['#2EC866', '#FFA116', '#4F81C3', '#6B7280'],
+                            data: [stats.hackerrank, stats.leetcode, stats.codechef],
+                            backgroundColor: ['rgba(46, 200, 102, 0.7)', 'rgba(255, 161, 22, 0.7)', 'rgba(79, 129, 195, 0.7)'],
+                            borderColor: ['#2EC866', '#FFA116', '#4F81C3'],
                             borderWidth: 1
                         }]
                     },
@@ -1785,12 +1762,12 @@ class UserService
                 const gridColor = getComputedStyle(document.body).getPropertyValue('--border').trim();
 
                 const chartData = {
-                    labels: ['HackerRank', 'LeetCode', 'CodeChef', 'GitHub'],
+                    labels: ['HackerRank', 'LeetCode', 'CodeChef'],
                     datasets: [{
                         label: 'Platform Statistics',
-                        data: [stats.hackerrank, stats.leetcode, stats.codechef, stats.github],
-                        backgroundColor: ['rgba(46, 200, 102, 0.5)', 'rgba(255, 161, 22, 0.5)', 'rgba(79, 129, 195, 0.5)', 'rgba(107, 114, 128, 0.5)'],
-                        borderColor: ['#2EC866', '#FFA116', '#4F81C3', '#6B7280'],
+                        data: [stats.hackerrank, stats.leetcode, stats.codechef],
+                        backgroundColor: ['rgba(46, 200, 102, 0.5)', 'rgba(255, 161, 22, 0.5)', 'rgba(79, 129, 195, 0.5)'],
+                        borderColor: ['#2EC866', '#FFA116', '#4F81C3'],
                         borderWidth: 2,
                         tension: 0.4,
                         fill: true
@@ -2028,7 +2005,7 @@ class UserService
             };
 
             // --- Chart Update Function ---
-            const updateChartsWithRealData = (commits, prs, issues, repoCount) => {
+            const updateChartsWithRealData = () => {
                 // Get LeetCode data from the existing counter element
                 const leetcodeEl = document.getElementById('leetcode-solved');
                 const leetcodeSolved = leetcodeEl ? parseInt(leetcodeEl.textContent) || 97 : 97;
@@ -2037,8 +2014,7 @@ class UserService
                 const updatedStats = {
                     hackerrank: 312,
                     leetcode: leetcodeSolved, // Use actual LeetCode data from counter
-                    codechef: 161,
-                    github: prs // Use actual PR count instead of repo count
+                    codechef: 161
                 };
 
                 console.log('Updating charts with real data:', updatedStats);
@@ -2048,8 +2024,7 @@ class UserService
                     heroChartInstance.data.datasets[0].data = [
                         updatedStats.hackerrank,
                         updatedStats.leetcode,
-                        updatedStats.codechef,
-                        updatedStats.github
+                        updatedStats.codechef
                     ];
                     heroChartInstance.update();
                 }
@@ -2059,8 +2034,7 @@ class UserService
                     barChartInstance.data.datasets[0].data = [
                         updatedStats.hackerrank,
                         updatedStats.leetcode,
-                        updatedStats.codechef,
-                        updatedStats.github
+                        updatedStats.codechef
                     ];
                     barChartInstance.update();
                 }
@@ -2070,8 +2044,7 @@ class UserService
                     lineChartInstance.data.datasets[0].data = [
                         updatedStats.hackerrank,
                         updatedStats.leetcode,
-                        updatedStats.codechef,
-                        updatedStats.github
+                        updatedStats.codechef
                     ];
                     lineChartInstance.update();
                 }
@@ -2127,7 +2100,7 @@ class UserService
                                                 defaultBranchRef {
                                                     target {
                                                         ... on Commit {
-                                                            history(author: { id: "$${username}" }, since: "2024-01-01T00:00:00Z") {
+                                                            history(author: { id: "$\${username}" }, since: "2024-01-01T00:00:00Z") {
                                                                 totalCount
                                                             }
                                                         }
@@ -2150,16 +2123,16 @@ class UserService
                                                 defaultBranchRef {
                                                     target {
                                                         ... on Commit {
-                                                            history(author: { id: "$${username}" }, since: "2024-01-01T00:00:00Z") {
+                                                            history(author: { id: "$\${username}" }, since: "2024-01-01T00:00:00Z") {
                                                                 totalCount
                                                             }
                                                         }
                                                     }
                                                 }
-                                                pullRequests(author: { id: "$${username}" }, first: 50) {
+                                                pullRequests(author: { id: "$\${username}" }, first: 50) {
                                                     totalCount
                                                 }
-                                                issues(author: { id: "$${username}" }, first: 50) {
+                                                issues(author: { id: "$\${username}" }, first: 50) {
                                                     totalCount
                                                 }
                                             }
@@ -2299,20 +2272,7 @@ class UserService
                         console.log(`Applying fallback values: ${commitCount} commits, ${prCount} PRs, ${issueCount} issues, ${repos.length} repos`);
                         updateRealTimeCounters(commitCount, prCount, issueCount);
                         updateProfileStats(userData, commitCount, prCount, issueCount, repos.length);
-                        
-                // Update GitHub PRs counter immediately
-                const githubPRsEl = document.getElementById('github-prs');
-                if (githubPRsEl) {
-                    githubPRsEl.textContent = prCount.toString();
-                    console.log(`Set GitHub PRs to ${prCount}`);
-                }
-                        
-                        // Update charts with fallback data
-                        updateChartsWithRealData(commitCount, prCount, issueCount, repos.length);
                     }
-
-                    // LeetCode data is handled by initializeSolvingStats() function
-                    // No need to fetch it again here to avoid conflicts
 
                     // Animate to the calculated value
                     contributionsEl.textContent = '0';
@@ -2328,37 +2288,13 @@ class UserService
                         },
                         onComplete: function () {
                             console.log('Animation completed, final value:', contributionsEl.textContent);
-                            stats.github = prCount;
                             console.log(`Real GitHub data: ${commitCount} commits, ${prCount} PRs, ${issueCount} issues`);
-                            console.log(`Real LeetCode data: ${leetcodeSolved} problems solved`);
 
                             // Update the real-time breakdown counters
                             updateRealTimeCounters(commitCount, prCount, issueCount);
 
                             // Update profile stats
                             updateProfileStats(userData, commitCount, prCount, issueCount, repos.length);
-
-                            // Update the GitHub PRs counter in Problem Solving Dashboard
-                            const githubPRsEl = document.getElementById('github-prs');
-                            if (githubPRsEl) {
-                                // Set initial value to 0 for animation
-                                githubPRsEl.textContent = '0';
-
-                                gsap.to(githubPRsEl, {
-                                    textContent: prCount,
-                                    duration: 1.5,
-                                    ease: "power2.out",
-                                    snap: { textContent: 1 },
-                                    onUpdate: function () {
-                                        const currentValue = Math.floor(this.targets()[0].textContent);
-                                        githubPRsEl.textContent = currentValue.toLocaleString();
-                                    }
-                                });
-                            }
-
-                            // Update charts with real data from all sources
-                            // LeetCode data will be read from the existing counter
-                            updateChartsWithRealData(commitCount, prCount, issueCount, repos.length);
                         }
                     });
 
@@ -2371,21 +2307,6 @@ class UserService
                     setTimeout(() => {
                         updateRealTimeCounters(3170, 150, 25);
                         updateProfileStats({ public_repos: 25 }, 3170, 150, 25, 25);
-
-                        // Update GitHub repos counter with fallback
-                        const githubReposEl = document.getElementById('github-repos');
-                        if (githubReposEl) {
-                            githubPRsEl.textContent = '150';
-                        }
-
-                        // Update LeetCode counter with fallback
-                        const leetcodeEl = document.getElementById('leetcode-solved');
-                        if (leetcodeEl) {
-                            leetcodeEl.textContent = '97';
-                        }
-
-                        // Update charts with fallback data
-                        updateChartsWithRealData(3170, 150, 97, 25);
                     }, 100);
                 }
             };
@@ -2395,7 +2316,6 @@ class UserService
                 const commitsEl = document.getElementById('real-commits');
                 const prsEl = document.getElementById('real-prs');
                 const issuesEl = document.getElementById('real-issues');
-                const githubPRsEl = document.getElementById('github-prs');
                 const totalCommitsEl = document.getElementById('total-commits');
                 const totalPRsEl = document.getElementById('total-prs');
                 const totalIssuesEl = document.getElementById('total-issues');
@@ -2414,9 +2334,6 @@ class UserService
                 if (issuesEl && issuesEl.textContent === 'Loading...') {
                     issuesEl.textContent = '25';
                     console.log('Set issues fallback to 25');
-                }
-                if (githubPRsEl && (githubPRsEl.textContent === 'Loading...' || githubPRsEl.textContent === '0')) {
-                    githubPRsEl.textContent = '150';
                 }
                 if (totalCommitsEl && totalCommitsEl.textContent === 'Loading...') {
                     totalCommitsEl.textContent = '3,170';
@@ -2439,22 +2356,6 @@ class UserService
 
             // Set immediate fallbacks
             setImmediateFallbacks();
-            
-            // Debug function to check current state
-            const debugGitHubStats = () => {
-                console.log('=== GitHub Stats Debug ===');
-                console.log('Real commits:', document.getElementById('real-commits')?.textContent);
-                console.log('Real PRs:', document.getElementById('real-prs')?.textContent);
-                console.log('Real issues:', document.getElementById('real-issues')?.textContent);
-                console.log('Total commits:', document.getElementById('total-commits')?.textContent);
-                console.log('Total PRs:', document.getElementById('total-prs')?.textContent);
-                console.log('Total issues:', document.getElementById('total-issues')?.textContent);
-                console.log('GitHub PRs:', document.getElementById('github-prs')?.textContent);
-                console.log('=======================');
-            };
-            
-            // Call debug function after a short delay
-            setTimeout(debugGitHubStats, 2000);
 
             // Load GitHub contributions when page loads - with delay to help with rate limiting
             setTimeout(() => {
@@ -2466,7 +2367,6 @@ class UserService
                 const commitsEl = document.getElementById('real-commits');
                 const prsEl = document.getElementById('real-prs');
                 const issuesEl = document.getElementById('real-issues');
-                const githubPRsEl = document.getElementById('github-prs');
                 const totalCommitsEl = document.getElementById('total-commits');
                 const totalPRsEl = document.getElementById('total-prs');
                 const totalIssuesEl = document.getElementById('total-issues');
@@ -2481,10 +2381,6 @@ class UserService
                 }
                 if (issuesEl && issuesEl.textContent === 'Loading...') {
                     issuesEl.textContent = '25';
-                }
-                if (githubPRsEl && (githubPRsEl.textContent === 'Loading...' || githubPRsEl.textContent === '0')) {
-                    githubPRsEl.textContent = '150';
-                    console.log('Fallback timeout: Set GitHub PRs to 150');
                 }
                 if (totalCommitsEl && totalCommitsEl.textContent === 'Loading...') {
                     totalCommitsEl.textContent = '3,170';
