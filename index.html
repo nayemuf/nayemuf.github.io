@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full-Stack Engineer | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=JetBrains+Mono:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- AOS for scroll animations -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Mermaid for diagrams -->
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+        mermaid.initialize({ startOnLoad: true, theme: 'dark' });
+    </script>
+</head>
+
+<body class="dark-theme">
+    <div id="app">
+        <header>
+            <nav class="glass-nav">
+                <div class="logo">NY.<span>_</span></div>
+                <ul class="nav-links">
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#engineering">Code</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section id="hero" class="hero-section">
+                <div class="hero-content" data-aos="fade-up">
+                    <h2 class="pre-title">Hello, I'm a</h2>
+                    <h1 class="main-title">Full-Stack Engineer</h1>
+                    <p class="hero-desc">Expert in <span>Full-Lifecycle Engineering</span>. From initial concept (0) to
+                        production-ready <span>Deployment</span>. Specialized in <span>PHP (Laravel)</span> and
+                        <span>Vue.js</span> architecture.</p>
+                    <div class="hero-cta">
+                        <a href="#experience" class="btn btn-primary">View My Work</a>
+                        <a href="https://github.com/nayemuf" target="_blank"
+                            class="btn btn-secondary github-btn">GitHub</a>
+                        <a href="https://www.linkedin.com/in/nayemuf/" target="_blank"
+                            class="btn btn-secondary linkedin-btn">LinkedIn</a>
+                    </div>
+                </div>
+                <div class="hero-bg-visual"></div>
+            </section>
+
+            <section id="experience" class="section">
+                <h2 class="section-title" data-aos="fade-right">Professional Experience</h2>
+                <div class="timeline">
+                    <!-- Gotipath -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-date">Jan 2026 - Present</div>
+                        <div class="timeline-content card glass">
+                            <h3>Software Engineer</h3>
+                            <h4 class="company"><a href="https://gotipath.com" target="_blank">Gotipath</a></h4>
+                            <p class="role-summary">Working as a core backend team member, optimizing and developing
+                                Bangladesh's leading OTT platforms and CDN infrastructure.</p>
+                            <ul class="highlights">
+                                <li><a href="https://www.bioscopeplus.com" target="_blank">Bioscope+</a>, <a
+                                        href="https://chorki.com/" target="_blank">Chorki</a>, <a
+                                        href="https://www.deeptoplay.com/" target="_blank">Deeptoplay</a>, etc.</li>
+                                <li><a href="https://maya.com.bd/" target="_blank">Maya Ecommerce Shop</a></li>
+                                <li>Multi-CDN Distribution System</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <!-- Gigabit -->
+                    <div class="timeline-item" data-aos="fade-up">
+                        <div class="timeline-date">Jan 2024 - Dec 2025</div>
+                        <div class="timeline-content card glass">
+                            <h3>Software Engineer</h3>
+                            <h4 class="company"><a href="https://gigabit.agency" target="_blank">Gigabit</a></h4>
+                            <p class="role-summary">Developed foundational architectures for large-scale solar
+                                management and internal enterprise systems.</p>
+                            <ul class="highlights">
+                                <li>Parth Solar Warehouse & PSW Energy (Australian Solar Management)</li>
+                                <li>Internal HRM, EHR, and Scheduling Systems</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="education" class="section bg-alt">
+                <h2 class="section-title" data-aos="fade-right">Education</h2>
+                <div class="education-card card glass" data-aos="fade-up">
+                    <div class="edu-header">
+                        <h3>BSc in Computer Science and Engineering</h3>
+                        <span class="cgpa">CGPA 3.13 / 4.00</span>
+                    </div>
+                    <p class="edu-desc">Focused on algorithms, distributed systems, and backend development patterns.
+                    </p>
+                </div>
+            </section>
+
+            <section id="achievements" class="section">
+                <h2 class="section-title" data-aos="fade-right">Achievements</h2>
+                <div class="stats-container">
+                    <div class="stat-card glass icpc-highlight" data-aos="zoom-in">
+                        <div class="badge">Major</div>
+                        <div class="stat-number">ICPC Onsite</div>
+                        <div class="stat-label">Participant (2023 Dhaka)</div>
+                    </div>
+                    <div class="stat-card glass" data-aos="zoom-in" data-aos-delay="100">
+                        <div class="stat-number">99+</div>
+                        <div class="stat-label">Leetcode Problems</div>
+                    </div>
+                    <div class="stat-card glass" data-aos="zoom-in" data-aos-delay="200">
+                        <div class="stat-number">300+</div>
+                        <div class="stat-label">HackerRank Score</div>
+                        <div class="stat-sub">3 Certificates Earned</div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="skills" class="section bg-alt">
+                <h2 class="section-title" data-aos="fade-right">Technical Arsenal</h2>
+
+                <h3 class="skills-subtitle" data-aos="fade-up">Core Expertise (Full-Stack)</h3>
+                <div class="skills-grid">
+                    <div class="skill-tag glass skill-featured" data-aos="fade-up">System Design</div>
+                    <div class="skill-tag glass skill-featured" data-aos="fade-up">PHP (Laravel)</div>
+                    <div class="skill-tag glass skill-featured" data-aos="fade-up" data-aos-delay="50">Vue.js</div>
+                    <div class="skill-tag glass skill-featured" data-aos="fade-up" data-aos-delay="50">MySQL</div>
+                    <div class="skill-tag glass skill-featured" data-aos="fade-up" data-aos-delay="50">Postgress</div>
+                    <div class="skill-tag glass skill-featured" data-aos="fade-up" data-aos-delay="100">Clean Code</div>
+                    <div class="skill-tag glass skill-featured" data-aos="fade-up" data-aos-delay="150">Server Setup &
+                        Deployment</div>
+                </div>
+
+                <h3 class="skills-subtitle" data-aos="fade-up" style="margin-top: 40px;">Secondary / Contributor</h3>
+                <div class="skills-grid secondary-grid">
+                    <div class="skill-tag glass" data-aos="fade-up">Go</div>
+                    <div class="skill-tag glass" data-aos="fade-up" data-aos-delay="50">Java</div>
+                    <div class="skill-tag glass" data-aos="fade-up" data-aos-delay="100">JavaScript</div>
+                    <div class="skill-tag glass" data-aos="fade-up" data-aos-delay="100">Angular</div>
+                    <div class="skill-tag glass" data-aos="fade-up" data-aos-delay="150">ClickHouse</div>
+                    <div class="skill-tag glass" data-aos="fade-up" data-aos-delay="200">Redis</div>
+                    <div class="skill-tag glass" data-aos="fade-up" data-aos-delay="250">CDN Systems</div>
+                </div>
+            </section>
+            <section id="engineering" class="section">
+                <h2 class="section-title" data-aos="fade-right">Engineering Excellence</h2>
+
+                <div class="engineering-container">
+                    <!-- Code Preview -->
+                    <div class="code-preview-block" data-aos="fade-up">
+                        <h3>Clean Code Architecture (Laravel)</h3>
+                        <p class="section-subtitle">Implementing Service-Repository pattern for decoupled, testable
+                            logic.</p>
+                        <div class="code-window glass">
+                            <div class="code-header">
+                                <span class="dot red"></span>
+                                <span class="dot yellow"></span>
+                                <span class="dot green"></span>
+                                <span class="file-name">SolarUsageService.php</span>
+                            </div>
+                            <pre><code class="language-php">
+namespace App\Services;
+
+class SolarUsageService implements UsageServiceInterface 
+{
+    public function __construct(
+        private RepositoryInterface $repository,
+        private NotificationSystem $notifier
+    ) {}
+
+    public function processDailyReport(int $userId): void 
+    {
+        $data = $this->repository->getByUser($userId);
+        
+        if ($data->isExceedingLimit()) {
+            $this->notifier->sendAlert($userId, 'Usage Alert');
+        }
+
+        $this->repository->saveProcessedData($data);
+    }
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <!-- System Design -->
+                    <div class="system-design-block" data-aos="fade-up" data-aos-delay="100">
+                        <h3>System Design: High-Scale OTT Architecture</h3>
+                        <p class="section-subtitle">Distributed CDN & Content Orchestration for millions of users.</p>
+                        <div class="mermaid-container glass">
+                            <div class="mermaid">
+                                graph TD
+                                UA[Users / Mobile / Web] --> LB[Load Balancer]
+                                LB --> API[Edge API Gateway]
+                                API --> CDN[Multi-CDN Distribution]
+                                API --> CACHE[Redis Cache]
+                                API --> DB[(Regional DB - TiDB/MySQL)]
+                                CDN --> ORIGIN[Content Origin Server]
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="glass-footer">
+            <div class="footer-content">
+                <p>&copy; 2026 Nayem Uddin. Built with precision and code.</p>
+                <div class="social-links">
+                    <a href="https://github.com/nayemuf" target="_blank" class="social-link">GitHub</a>
+                    <a href="https://www.linkedin.com/in/nayemuf/" target="_blank" class="social-link">LinkedIn</a>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
